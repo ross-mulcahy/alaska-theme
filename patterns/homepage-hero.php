@@ -18,6 +18,6 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:alaska/booking-widget {"actionUrl":"#","defaultFrom":"Seattle (SEA)","defaultTo":"San Francisco (SFO)"} /--></div>
+<!-- wp:alaska/booking-widget {"actionUrl":"/flights/","defaultFrom":"Seattle (SEA)","defaultTo":"San Francisco (SFO)"} /--></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover -->
