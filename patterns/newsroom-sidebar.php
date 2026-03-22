@@ -3,7 +3,7 @@
  * Title: Newsroom Sidebar
  * Slug: alaska/newsroom-sidebar
  * Categories: alaska-newsroom
- * Description: Sidebar with media inquiries, resources, and social links.
+ * Description: Sidebar with media inquiries and resources.
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"blockGap":"2.5rem"}},"layout":{"type":"default"}} -->
@@ -14,23 +14,23 @@
 <h3 class="wp-block-heading has-body-lg-font-size">Resource Center</h3>
 <!-- /wp:heading -->
 
-<!-- wp:list {"style":{"spacing":{"blockGap":"1rem"}}} -->
-<ul class="wp-block-list"><!-- wp:list-item -->
-<li><a href="#">Media Kit &amp; Logos →</a></li>
-<!-- /wp:list-item -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"0.75rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-group"><!-- wp:paragraph {"textColor":"on-surface-variant"} -->
+<p class="has-on-surface-variant-color has-text-color"><a href="#">Media Kit &amp; Logos →</a></p>
+<!-- /wp:paragraph -->
 
-<!-- wp:list-item -->
-<li><a href="#">Executive Bios →</a></li>
-<!-- /wp:list-item -->
+<!-- wp:paragraph {"textColor":"on-surface-variant"} -->
+<p class="has-on-surface-variant-color has-text-color"><a href="#">Executive Bios →</a></p>
+<!-- /wp:paragraph -->
 
-<!-- wp:list-item -->
-<li><a href="#">Fleet Fact Sheets →</a></li>
-<!-- /wp:list-item -->
+<!-- wp:paragraph {"textColor":"on-surface-variant"} -->
+<p class="has-on-surface-variant-color has-text-color"><a href="#">Fleet Fact Sheets →</a></p>
+<!-- /wp:paragraph -->
 
-<!-- wp:list-item -->
-<li><a href="#">Investor Relations →</a></li>
-<!-- /wp:list-item --></ul>
-<!-- /wp:list --></div>
+<!-- wp:paragraph {"textColor":"on-surface-variant"} -->
+<p class="has-on-surface-variant-color has-text-color"><a href="#">Investor Relations →</a></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"default"}} -->
@@ -38,18 +38,10 @@
 <p class="has-outline-color has-text-color" style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em">Stay Connected</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:html -->
-<div style="display:flex;gap:1rem;">
-<a href="#" style="width:3rem;height:3rem;border-radius:50%;background-color:var(--wp--preset--color--surface-container-high);display:flex;align-items:center;justify-content:center;color:var(--wp--preset--color--primary);text-decoration:none;">
-<span class="material-symbols-outlined">share</span>
-</a>
-<a href="#" style="width:3rem;height:3rem;border-radius:50%;background-color:var(--wp--preset--color--surface-container-high);display:flex;align-items:center;justify-content:center;color:var(--wp--preset--color--primary);text-decoration:none;">
-<span class="material-symbols-outlined">rss_feed</span>
-</a>
-<a href="#" style="width:3rem;height:3rem;border-radius:50%;background-color:var(--wp--preset--color--surface-container-high);display:flex;align-items:center;justify-content:center;color:var(--wp--preset--color--primary);text-decoration:none;">
-<span class="material-symbols-outlined">mail</span>
-</a>
-</div>
-<!-- /wp:html --></div>
+<!-- wp:social-links {"iconColor":"primary","iconColorValue":"#002b48","iconBackgroundColor":"surface-container-high","iconBackgroundColorValue":"#e7e8e9","style":{"spacing":{"blockGap":{"left":"1rem"}}},"className":"is-style-default"} -->
+<ul class="wp-block-social-links has-icon-color has-icon-background-color is-style-default"><!-- wp:social-link {"url":"#","service":"mail"} /-->
+<!-- wp:social-link {"url":"#","service":"feed"} /-->
+<!-- wp:social-link {"url":"#","service":"x"} /--></ul>
+<!-- /wp:social-links --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->

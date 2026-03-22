@@ -7,61 +7,79 @@
  */
 ?>
 <!-- wp:group {"align":"full","backgroundColor":"surface-container-lowest","style":{"spacing":{"padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-surface-container-lowest-background-color has-background" style="padding-top:var(--wp--preset--spacing--100);padding-bottom:var(--wp--preset--spacing--100)">
-	<!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"default"}} -->
-	<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--60)">
-		<!-- wp:heading {"level":2,"fontSize":"headline-lg"} -->
-		<h2 class="wp-block-heading has-headline-lg-font-size">The Premium Journey</h2>
-		<!-- /wp:heading -->
+<div class="wp-block-group alignfull has-surface-container-lowest-background-color has-background" style="padding-top:var(--wp--preset--spacing--100);padding-bottom:var(--wp--preset--spacing--100)"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--60)"><!-- wp:heading {"level":2,"fontSize":"headline-lg"} -->
+<h2 class="wp-block-heading has-headline-lg-font-size">The Premium Journey</h2>
+<!-- /wp:heading -->
 
-		<!-- wp:paragraph {"textColor":"on-surface-variant"} -->
-		<p class="has-on-surface-variant-color has-text-color">Every mile is an opportunity to unwind.</p>
-		<!-- /wp:paragraph -->
-	</div>
-	<!-- /wp:group -->
+<!-- wp:paragraph {"textColor":"on-surface-variant"} -->
+<p class="has-on-surface-variant-color has-text-color">Every mile is an opportunity to unwind.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
 
-	<!-- wp:html -->
-	<div class="alaska-bento-grid">
-		<!-- Large card -->
-		<div class="alaska-bento-large" style="background-color:var(--wp--preset--color--surface-container-low);border-radius:1rem;overflow:hidden;display:flex;flex-direction:column;">
-			<div style="height:66%;overflow:hidden;" class="alaska-hover-zoom">
-				<img src="" alt="Relaxation" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
-			</div>
-			<div style="padding:2rem;">
-				<h3 style="font-family:'Manrope',sans-serif;font-size:1.5rem;font-weight:700;color:var(--wp--preset--color--primary);margin:0 0 0.5rem;">Sit back and relax</h3>
-				<p style="color:var(--wp--preset--color--on-surface-variant);margin:0;font-size:0.875rem;">Ergonomically designed seats with power outlets in every row to keep you fully charged.</p>
-			</div>
-		</div>
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column {"width":"50%"} -->
+<div class="wp-block-column" style="flex-basis:50%"><!-- wp:group {"backgroundColor":"surface-container-low","style":{"border":{"radius":"1rem"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|40","left":"0","right":"0"}},"dimensions":{"minHeight":"100%"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group has-surface-container-low-background-color has-background" style="border-radius:1rem;min-height:100%;padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"><!-- wp:image {"sizeSlug":"large"} -->
+<figure class="wp-block-image size-large"><img alt="Relaxation"/></figure>
+<!-- /wp:image -->
 
-		<!-- Wide card -->
-		<div class="alaska-bento-wide" style="background-color:var(--wp--preset--color--surface-container);border-radius:1rem;padding:2rem;display:flex;align-items:center;gap:1.5rem;overflow:hidden;">
-			<div style="width:66%;">
-				<h3 style="font-family:'Manrope',sans-serif;font-size:1.25rem;font-weight:700;color:var(--wp--preset--color--primary);margin:0 0 0.5rem;">Enjoy your favorite drink</h3>
-				<p style="color:var(--wp--preset--color--on-surface-variant);margin:0;font-size:0.875rem;">Curated selection of West Coast wines and craft beers on us.</p>
-			</div>
-			<div style="width:34%;height:100%;">
-				<img src="" alt="Drinks" style="width:100%;height:100%;object-fit:cover;border-radius:0.5rem;" loading="lazy" />
-			</div>
-		</div>
+<!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group" style="padding-left:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40)"><!-- wp:heading {"level":3,"fontSize":"headline-md"} -->
+<h3 class="wp-block-heading has-headline-md-font-size">Sit back and relax</h3>
+<!-- /wp:heading -->
 
-		<!-- Small card: WiFi -->
-		<div style="background-color:var(--wp--preset--color--surface-container-high);border-radius:1rem;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;">
-			<span class="material-symbols-outlined" style="font-size:2rem;color:var(--wp--preset--color--secondary);">wifi</span>
-			<div>
-				<h3 style="font-family:'Manrope',sans-serif;font-weight:700;color:var(--wp--preset--color--primary);margin:0 0 0.25rem;">Staying connected gets speedier</h3>
-				<p style="color:var(--wp--preset--color--on-surface-variant);margin:0;font-size:0.75rem;">High-speed satellite Wi-Fi available on most flights.</p>
-			</div>
-		</div>
+<!-- wp:paragraph {"textColor":"on-surface-variant"} -->
+<p class="has-on-surface-variant-color has-text-color">Ergonomically designed seats with power outlets in every row to keep you fully charged.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
 
-		<!-- Small card: Entertainment -->
-		<div style="background-color:var(--wp--preset--color--primary);border-radius:1rem;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;color:#fff;">
-			<span class="material-symbols-outlined" style="font-size:2rem;">movie</span>
-			<div>
-				<h3 style="font-family:'Manrope',sans-serif;font-weight:700;margin:0 0 0.25rem;">1000+ movies &amp; TV episodes</h3>
-				<p style="opacity:0.8;margin:0;font-size:0.75rem;">Free entertainment streamed directly to your device.</p>
-			</div>
-		</div>
-	</div>
-	<!-- /wp:html -->
-</div>
+<!-- wp:column {"width":"50%"} -->
+<div class="wp-block-column" style="flex-basis:50%"><!-- wp:group {"backgroundColor":"surface-container","style":{"border":{"radius":"1rem"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"},"margin":{"bottom":"var:preset|spacing|30"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group has-surface-container-background-color has-background" style="border-radius:1rem;margin-bottom:var(--wp--preset--spacing--30);padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:heading {"level":3,"fontSize":"headline-sm"} -->
+<h3 class="wp-block-heading has-headline-sm-font-size">Enjoy your favorite drink</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"textColor":"on-surface-variant","fontSize":"body-sm"} -->
+<p class="has-on-surface-variant-color has-text-color has-body-sm-font-size">Curated selection of West Coast wines and craft beers on us.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"backgroundColor":"surface-container-high","style":{"border":{"radius":"1rem"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group has-surface-container-high-background-color has-background" style="border-radius:1rem;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:paragraph {"style":{"typography":{"fontSize":"2rem"}},"textColor":"secondary"} -->
+<p class="has-secondary-color has-text-color" style="font-size:2rem">📶</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.9375rem"}},"textColor":"primary"} -->
+<h4 class="wp-block-heading has-primary-color has-text-color" style="font-size:0.9375rem">High-speed Wi-Fi</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem"}},"textColor":"on-surface-variant"} -->
+<p class="has-on-surface-variant-color has-text-color" style="font-size:0.75rem">Satellite Wi-Fi on most flights.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:group {"backgroundColor":"primary","textColor":"on-primary","style":{"border":{"radius":"1rem"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group has-on-primary-color has-primary-background-color has-text-color has-background" style="border-radius:1rem;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:paragraph {"style":{"typography":{"fontSize":"2rem"}}} -->
+<p style="font-size:2rem">🎬</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4,"style":{"typography":{"fontSize":"0.9375rem"}},"textColor":"on-primary"} -->
+<h4 class="wp-block-heading has-on-primary-color has-text-color" style="font-size:0.9375rem">1000+ movies &amp; TV</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem"},"color":{"text":"rgba(255,255,255,0.8)"}}} -->
+<p class="has-text-color" style="color:rgba(255,255,255,0.8);font-size:0.75rem">Free entertainment to your device.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
 <!-- /wp:group -->
