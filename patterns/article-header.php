@@ -11,10 +11,10 @@
 <p class="has-outline-color has-text-color" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em">Newsroom › <strong>Press Releases</strong></p>
 <!-- /wp:paragraph -->
 
-<!-- wp:group {"style":{"layout":{"selfStretch":"fixed","flexSize":"56rem"}},"layout":{"type":"default"}} -->
+<!-- wp:group {"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:post-title {"level":1,"style":{"typography":{"lineHeight":"1.1","letterSpacing":"-0.025em"}},"fontSize":"display-md"} /-->
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"1rem"},"border":{"left":{"color":"var:preset|color|primary-fixed","width":"2px"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+<!-- wp:group {"style":{"spacing":{"blockGap":"1rem","padding":{"left":"1rem"}},"border":{"left":{"color":"var:preset|color|primary-fixed","width":"2px"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div class="wp-block-group" style="border-left-color:var(--wp--preset--color--primary-fixed);border-left-width:2px;padding-left:1rem"><!-- wp:post-date {"textColor":"on-surface","fontSize":"body-sm","style":{"typography":{"fontWeight":"600"}}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
