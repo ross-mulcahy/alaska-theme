@@ -30,6 +30,5 @@
 		]
 	},
 	"render": "file:./render.php",
-	"style": "file:./style-index.css",
-	"editorScript": "file:./index.js"
+	"style": "file:./style-index.css"
 }
