@@ -11,8 +11,15 @@
 		{
 			"step": "installTheme",
 			"themeData": {
+				"resource": "wordpress.org/themes",
+				"slug": "twentytwentyfive"
+			}
+		},
+		{
+			"step": "installTheme",
+			"themeData": {
 				"resource": "url",
-				"url": "https://github.com/ross-mulcahy/alaska-theme/archive/refs/heads/main.zip"
+				"url": "https://github-proxy.com/proxy.php?repo=ross-mulcahy/alaska-theme&branch=main"
 			},
 			"options": {
 				"activate": true
