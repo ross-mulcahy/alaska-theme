@@ -7,6 +7,18 @@
    Glassmorphism Navigation
    ========================================================================== */
 
+/* ==========================================================================
+   Reset gaps between template parts and full-width sections
+   ========================================================================== */
+
+body {
+	margin: 0;
+}
+
+.wp-site-blocks > * + * {
+	margin-block-start: 0;
+}
+
 .is-style-glass-nav {
 	background: rgba(248, 249, 250, 0.85);
 	backdrop-filter: blur(12px);
