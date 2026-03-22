@@ -130,7 +130,84 @@ function alaska_register_destination_cpt() {
 		'has_archive'  => true,
 		'show_in_rest' => true,
 		'menu_icon'    => 'dashicons-location-alt',
-		'supports'     => array( 'title', 'thumbnail', 'custom-fields' ),
+		'supports'     => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
+		'template'     => array(
+			array( 'alaska/destination-hero' ),
+			array( 'core/group', array(
+				'layout'          => array( 'type' => 'constrained' ),
+				'backgroundColor' => 'background',
+				'style'           => array( 'spacing' => array( 'padding' => array( 'top' => 'var:preset|spacing|100', 'bottom' => 'var:preset|spacing|100' ) ) ),
+			), array(
+				array( 'core/columns', array(), array(
+					array( 'core/column', array( 'width' => '60%' ), array(
+						array( 'core/heading', array( 'level' => 2, 'content' => 'About this destination', 'fontSize' => 'display-md' ) ),
+						array( 'core/paragraph', array( 'content' => 'Add compelling details about this destination — what makes it special, the best time to visit, and what travelers can expect.', 'textColor' => 'on-surface-variant', 'fontSize' => 'body-lg' ) ),
+					) ),
+					array( 'core/column', array( 'width' => '40%' ), array(
+						array( 'core/group', array(
+							'backgroundColor' => 'surface-container-lowest',
+							'style'           => array(
+								'border'  => array( 'radius' => '0.75rem' ),
+								'spacing' => array( 'padding' => array( 'top' => 'var:preset|spacing|40', 'bottom' => 'var:preset|spacing|40', 'left' => 'var:preset|spacing|40', 'right' => 'var:preset|spacing|40' ) ),
+							),
+						), array(
+							array( 'core/heading', array( 'level' => 3, 'content' => 'Quick Facts', 'fontSize' => 'headline-sm' ) ),
+							array( 'core/list', array(), array(
+								array( 'core/list-item', array( 'content' => 'Best time to visit: Spring & Fall' ) ),
+								array( 'core/list-item', array( 'content' => 'Average flight time: 2h 30m' ) ),
+								array( 'core/list-item', array( 'content' => 'Currency: USD' ) ),
+							) ),
+						) ),
+					) ),
+				) ),
+			) ),
+			array( 'core/group', array(
+				'align'           => 'full',
+				'backgroundColor' => 'surface-container-low',
+				'style'           => array( 'spacing' => array( 'padding' => array( 'top' => 'var:preset|spacing|80', 'bottom' => 'var:preset|spacing|80' ) ) ),
+				'layout'          => array( 'type' => 'constrained' ),
+			), array(
+				array( 'core/heading', array( 'level' => 2, 'content' => 'Things to do', 'fontSize' => 'headline-lg' ) ),
+				array( 'core/columns', array(), array(
+					array( 'core/column', array(), array(
+						array( 'core/image', array() ),
+						array( 'core/heading', array( 'level' => 3, 'content' => 'Activity name', 'fontSize' => 'headline-sm' ) ),
+						array( 'core/paragraph', array( 'content' => 'Describe a must-do activity at this destination.', 'textColor' => 'on-surface-variant' ) ),
+					) ),
+					array( 'core/column', array(), array(
+						array( 'core/image', array() ),
+						array( 'core/heading', array( 'level' => 3, 'content' => 'Activity name', 'fontSize' => 'headline-sm' ) ),
+						array( 'core/paragraph', array( 'content' => 'Describe a must-do activity at this destination.', 'textColor' => 'on-surface-variant' ) ),
+					) ),
+					array( 'core/column', array(), array(
+						array( 'core/image', array() ),
+						array( 'core/heading', array( 'level' => 3, 'content' => 'Activity name', 'fontSize' => 'headline-sm' ) ),
+						array( 'core/paragraph', array( 'content' => 'Describe a must-do activity at this destination.', 'textColor' => 'on-surface-variant' ) ),
+					) ),
+				) ),
+			) ),
+			array( 'core/group', array(
+				'align'  => 'full',
+				'layout' => array( 'type' => 'constrained' ),
+				'style'  => array( 'spacing' => array( 'padding' => array( 'top' => 'var:preset|spacing|100', 'bottom' => 'var:preset|spacing|100' ) ) ),
+			), array(
+				array( 'core/group', array(
+					'style'  => array(
+						'spacing' => array( 'padding' => array( 'top' => 'var:preset|spacing|60', 'bottom' => 'var:preset|spacing|60', 'left' => 'var:preset|spacing|60', 'right' => 'var:preset|spacing|60' ) ),
+						'border' => array( 'radius' => '1rem' ),
+					),
+					'gradient' => 'cta-gradient',
+					'textColor' => 'on-primary',
+					'layout' => array( 'type' => 'constrained', 'contentSize' => '640px' ),
+				), array(
+					array( 'core/heading', array( 'level' => 2, 'content' => 'Ready to explore?', 'textColor' => 'on-primary', 'fontSize' => 'display-md', 'textAlign' => 'center' ) ),
+					array( 'core/paragraph', array( 'content' => 'Book your flight today and experience Alaska Airlines\' award-winning service.', 'textColor' => 'on-primary', 'fontSize' => 'body-lg', 'align' => 'center' ) ),
+					array( 'core/buttons', array( 'layout' => array( 'type' => 'flex', 'justifyContent' => 'center' ) ), array(
+						array( 'core/button', array( 'text' => 'Search Flights', 'backgroundColor' => 'on-primary', 'textColor' => 'primary' ) ),
+					) ),
+				) ),
+			) ),
+		),
 		'rewrite'      => array( 'slug' => 'destinations' ),
 	) );
 
@@ -170,6 +247,7 @@ function alaska_register_blocks() {
 	$blocks = array(
 		'booking-widget',
 		'destination-cards',
+		'destination-hero',
 		'flight-results',
 		'flight-filters',
 		'date-carousel',

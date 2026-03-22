@@ -247,6 +247,7 @@
 	],
 	"customTemplates": [
 		{ "name": "page-premium", "title": "Premium Class Landing", "postTypes": ["page"] },
-		{ "name": "page-flights", "title": "Flight Results", "postTypes": ["page"] }
+		{ "name": "page-flights", "title": "Flight Results", "postTypes": ["page"] },
+		{ "name": "single-destination", "title": "Destination Landing Page", "postTypes": ["destination"] }
 	]
 }
