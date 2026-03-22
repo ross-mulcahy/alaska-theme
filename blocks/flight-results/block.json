@@ -1,66 +1,68 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
-	"name": "alaska/flight-results",
-	"version": "1.0.0",
-	"title": "Flight Results",
-	"category": "alaska-flight",
-	"icon": "airplane",
-	"description": "Flight result cards with cabin pricing and selection.",
-	"textdomain": "alaska",
-	"attributes": {
-		"flights": {
-			"type": "array",
-			"default": [
-				{
-					"airline": "Alaska Airlines",
-					"departure": "10:00 AM",
-					"arrival": "3:30 PM",
-					"origin": "SEA",
-					"destination": "NRT",
-					"duration": "11h 30m",
-					"stops": "Nonstop",
-					"mainPrice": "$970",
-					"premiumPrice": "$1,450",
-					"firstPrice": "$3,500",
-					"popular": false
-				},
-				{
-					"airline": "Alaska Airlines",
-					"departure": "12:30 PM",
-					"arrival": "5:55 PM",
-					"origin": "SEA",
-					"destination": "NRT",
-					"duration": "11h 25m",
-					"stops": "Nonstop",
-					"mainPrice": "$1,010",
-					"premiumPrice": "$1,550",
-					"firstPrice": "$3,800",
-					"popular": true
-				},
-				{
-					"airline": "Alaska Airlines",
-					"departure": "6:45 AM",
-					"arrival": "10:25 AM",
-					"origin": "SEA",
-					"destination": "NRT",
-					"duration": "11h 40m",
-					"stops": "Nonstop",
-					"mainPrice": "$895",
-					"premiumPrice": "$1,350",
-					"firstPrice": "$3,200",
-					"popular": false
-				}
-			]
-		}
-	},
-	"supports": {
-		"html": false,
-		"align": [
-			"wide",
-			"full"
-		]
-	},
-	"render": "file:./render.php",
-	"style": "file:./style-index.css"
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "alaska/flight-results",
+  "version": "1.0.0",
+  "title": "Flight Results",
+  "category": "alaska-flight",
+  "icon": "airplane",
+  "description": "Flight result cards with cabin pricing and selection.",
+  "textdomain": "alaska",
+  "attributes": {
+    "flights": {
+      "type": "array",
+      "default": [
+        {
+          "airline": "Alaska Airlines",
+          "departure": "10:00 AM",
+          "arrival": "3:30 PM",
+          "origin": "SEA",
+          "destination": "NRT",
+          "duration": "11h 30m",
+          "stops": "Nonstop",
+          "mainPrice": "$970",
+          "premiumPrice": "$1,450",
+          "firstPrice": "$3,500",
+          "popular": false
+        },
+        {
+          "airline": "Alaska Airlines",
+          "departure": "12:30 PM",
+          "arrival": "5:55 PM",
+          "origin": "SEA",
+          "destination": "NRT",
+          "duration": "11h 25m",
+          "stops": "Nonstop",
+          "mainPrice": "$1,010",
+          "premiumPrice": "$1,550",
+          "firstPrice": "$3,800",
+          "popular": true
+        },
+        {
+          "airline": "Alaska Airlines",
+          "departure": "6:45 AM",
+          "arrival": "10:25 AM",
+          "origin": "SEA",
+          "destination": "NRT",
+          "duration": "11h 40m",
+          "stops": "Nonstop",
+          "mainPrice": "$895",
+          "premiumPrice": "$1,350",
+          "firstPrice": "$3,200",
+          "popular": false
+        }
+      ]
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "render": "file:./render.php",
+  "viewScriptModule": "file:./view.js",
+  "style": "file:./style.css",
+  "editorScript": "file:./index.js"
 }

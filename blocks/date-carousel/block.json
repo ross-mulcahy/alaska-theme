@@ -1,62 +1,64 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
-	"name": "alaska/date-carousel",
-	"version": "1.0.0",
-	"title": "Date Carousel",
-	"category": "alaska-flight",
-	"icon": "calendar-alt",
-	"description": "Horizontal date picker with prices for flight search.",
-	"textdomain": "alaska",
-	"attributes": {
-		"dates": {
-			"type": "array",
-			"default": [
-				{
-					"label": "Aug 30",
-					"price": "$980",
-					"active": false
-				},
-				{
-					"label": "Aug 31",
-					"price": "$950",
-					"active": false
-				},
-				{
-					"label": "Sep 1",
-					"price": "$970",
-					"active": true
-				},
-				{
-					"label": "Sep 2",
-					"price": "$960",
-					"active": false
-				},
-				{
-					"label": "Sep 3",
-					"price": "$990",
-					"active": false
-				},
-				{
-					"label": "Sep 4",
-					"price": "$1,020",
-					"active": false
-				},
-				{
-					"label": "Sep 5",
-					"price": "$940",
-					"active": false
-				}
-			]
-		}
-	},
-	"supports": {
-		"html": false,
-		"align": [
-			"wide",
-			"full"
-		]
-	},
-	"render": "file:./render.php",
-	"style": "file:./style-index.css"
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "alaska/date-carousel",
+  "version": "1.0.0",
+  "title": "Date Carousel",
+  "category": "alaska-flight",
+  "icon": "calendar-alt",
+  "description": "Horizontal date picker with prices for flight search.",
+  "textdomain": "alaska",
+  "attributes": {
+    "dates": {
+      "type": "array",
+      "default": [
+        {
+          "label": "Aug 30",
+          "price": "$980",
+          "active": false
+        },
+        {
+          "label": "Aug 31",
+          "price": "$950",
+          "active": false
+        },
+        {
+          "label": "Sep 1",
+          "price": "$970",
+          "active": true
+        },
+        {
+          "label": "Sep 2",
+          "price": "$960",
+          "active": false
+        },
+        {
+          "label": "Sep 3",
+          "price": "$990",
+          "active": false
+        },
+        {
+          "label": "Sep 4",
+          "price": "$1,020",
+          "active": false
+        },
+        {
+          "label": "Sep 5",
+          "price": "$940",
+          "active": false
+        }
+      ]
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "render": "file:./render.php",
+  "viewScriptModule": "file:./view.js",
+  "style": "file:./style.css",
+  "editorScript": "file:./index.js"
 }

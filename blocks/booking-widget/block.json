@@ -30,5 +30,7 @@
 		]
 	},
 	"render": "file:./render.php",
-	"style": "file:./style-index.css"
+	"viewScriptModule": "file:./view.js",
+	"style": "file:./style.css",
+	"editorScript": "file:./index.js"
 }

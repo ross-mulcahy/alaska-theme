@@ -1,38 +1,39 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
-	"name": "alaska/contact-card",
-	"version": "1.0.0",
-	"title": "Contact Card",
-	"category": "alaska-newsroom",
-	"icon": "email",
-	"description": "Media inquiries or CTA card with contact details.",
-	"textdomain": "alaska",
-	"attributes": {
-		"title": {
-			"type": "string",
-			"default": "Media Inquiries"
-		},
-		"email": {
-			"type": "string",
-			"default": "newsroom@alaskaair.com"
-		},
-		"phone": {
-			"type": "string",
-			"default": "+1 (206) 304-0008"
-		},
-		"note": {
-			"type": "string",
-			"default": "Available 24/7 for credentialed media members only."
-		},
-		"variant": {
-			"type": "string",
-			"default": "dark"
-		}
-	},
-	"supports": {
-		"html": false
-	},
-	"render": "file:./render.php",
-	"style": "file:./style-index.css"
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "alaska/contact-card",
+  "version": "1.0.0",
+  "title": "Contact Card",
+  "category": "alaska-newsroom",
+  "icon": "email",
+  "description": "Media inquiries or CTA card with contact details.",
+  "textdomain": "alaska",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Media Inquiries"
+    },
+    "email": {
+      "type": "string",
+      "default": "newsroom@alaskaair.com"
+    },
+    "phone": {
+      "type": "string",
+      "default": "+1 (206) 304-0008"
+    },
+    "note": {
+      "type": "string",
+      "default": "Available 24/7 for credentialed media members only."
+    },
+    "variant": {
+      "type": "string",
+      "default": "dark"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "render": "file:./render.php",
+  "style": "file:./style.css",
+  "editorScript": "file:./index.js"
 }
