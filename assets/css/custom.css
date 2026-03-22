@@ -11,6 +11,18 @@
 	background: rgba(248, 249, 250, 0.85);
 	backdrop-filter: blur(12px);
 	-webkit-backdrop-filter: blur(12px);
+	position: sticky;
+	top: 0;
+	z-index: 50;
+}
+
+/* Footer link colors on dark background */
+.has-primary-background-color a {
+	color: inherit;
+}
+
+.has-primary-background-color a:hover {
+	color: #fff;
 }
 
 /* ==========================================================================
