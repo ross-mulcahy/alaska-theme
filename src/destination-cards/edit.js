@@ -80,23 +80,28 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div { ...blockProps }>
-				<ServerSideRender
-					block="alaska/destination-cards"
-					attributes={ attributes }
-					LoadingResponsePlaceholder={ () => (
-						<Placeholder icon="location-alt" label={ __( 'Destination Cards', 'alaska' ) }>
-							<Spinner />
-						</Placeholder>
-					) }
-					EmptyResponsePlaceholder={ () => (
-						<Placeholder
-							icon="location-alt"
-							label={ __( 'Destination Cards', 'alaska' ) }
-							instructions={ __( 'No destinations found. Add destinations in the admin.', 'alaska' ) }
-						/>
-					) }
-				/>
+			<div { ...blockProps } style={ { ...blockProps.style, pointerEvents: 'all' } }>
+				<div
+					style={ { pointerEvents: 'none' } }
+					onClickCapture={ ( e ) => e.preventDefault() }
+				>
+					<ServerSideRender
+						block="alaska/destination-cards"
+						attributes={ attributes }
+						LoadingResponsePlaceholder={ () => (
+							<Placeholder icon="location-alt" label={ __( 'Destination Cards', 'alaska' ) }>
+								<Spinner />
+							</Placeholder>
+						) }
+						EmptyResponsePlaceholder={ () => (
+							<Placeholder
+								icon="location-alt"
+								label={ __( 'Destination Cards', 'alaska' ) }
+								instructions={ __( 'No destinations found. Add destinations in the admin.', 'alaska' ) }
+							/>
+						) }
+					/>
+				</div>
 			</div>
 		</>
 	);
