@@ -12,12 +12,11 @@
 			"step": "installTheme",
 			"themeData": {
 				"resource": "url",
-				"url": "https://github-proxy.com/proxy/?repo=ross-mulcahy/alaska-theme&directory=/"
+				"url": "https://github.com/ross-mulcahy/alaska-theme/archive/refs/heads/main.zip"
+			},
+			"options": {
+				"activate": true
 			}
-		},
-		{
-			"step": "activateTheme",
-			"themeFolderName": "alaska-theme"
 		},
 		{
 			"step": "setSiteOptions",
