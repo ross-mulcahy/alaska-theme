@@ -132,7 +132,6 @@ function alaska_register_destination_cpt() {
 		'menu_icon'    => 'dashicons-location-alt',
 		'supports'     => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
 		'template'     => array(
-			array( 'alaska/destination-hero' ),
 			array( 'core/group', array(
 				'layout'          => array( 'type' => 'constrained' ),
 				'backgroundColor' => 'background',
@@ -247,7 +246,6 @@ function alaska_register_blocks() {
 	$blocks = array(
 		'booking-widget',
 		'destination-cards',
-		'destination-hero',
 		'flight-results',
 		'flight-filters',
 		'date-carousel',
