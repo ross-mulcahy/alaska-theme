@@ -1,0 +1,130 @@
+/* Block: alaska/booking-widget */
+
+.alaska-booking-widget__container {
+	background-color: var(--wp--preset--color--surface-container-lowest);
+	border-radius: var(--wp--custom--border-radius--xl);
+	box-shadow: 0 4px 24px -4px rgba(25, 28, 29, 0.06);
+	overflow: hidden;
+	max-width: 64rem;
+	margin-inline: auto;
+}
+
+/* Tabs row */
+.alaska-booking-widget__tabs {
+	display: flex;
+	border-bottom: 1px solid var(--wp--preset--color--surface-container);
+}
+
+.alaska-booking-widget__tab {
+	padding: 1.25rem 2rem;
+	font-size: var(--wp--preset--font-size--body-sm);
+	font-weight: 600;
+	color: var(--wp--preset--color--on-surface-variant);
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	border-bottom: 2px solid transparent;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.alaska-booking-widget__tab:hover {
+	background-color: var(--wp--preset--color--surface-container-low);
+}
+
+.alaska-booking-widget__tab--active {
+	color: var(--wp--preset--color--primary);
+	font-weight: 700;
+	border-bottom-color: var(--wp--preset--color--primary);
+}
+
+/* Form grid */
+.alaska-booking-widget__form {
+	padding: 2rem;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1.5rem;
+	align-items: end;
+}
+
+@media (max-width: 767px) {
+	.alaska-booking-widget__form {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Labels */
+.alaska-booking-widget__label {
+	display: block;
+	font-size: 0.6875rem;
+	font-weight: 700;
+	color: var(--wp--preset--color--outline);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	margin-bottom: 0.5rem;
+}
+
+/* Input wrapper */
+.alaska-booking-widget__input-wrap {
+	position: relative;
+}
+
+.alaska-booking-widget__input {
+	width: 100%;
+	background-color: var(--wp--preset--color--surface-container-high);
+	border: none;
+	border-radius: var(--wp--custom--border-radius--lg);
+	padding: 1rem;
+	padding-right: 2.5rem;
+	font-weight: 500;
+	color: var(--wp--preset--color--primary);
+	font-family: var(--wp--preset--font-family--headline);
+	font-size: var(--wp--preset--font-size--body-md);
+}
+
+.alaska-booking-widget__input:focus {
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(0, 43, 72, 0.2);
+}
+
+.alaska-booking-widget__input::placeholder {
+	color: var(--wp--preset--color--outline);
+	font-weight: 400;
+}
+
+/* Trailing icon */
+.alaska-booking-widget__icon {
+	position: absolute;
+	right: 0.75rem;
+	top: 50%;
+	transform: translateY(-50%);
+	color: var(--wp--preset--color--outline);
+	font-size: 20px;
+	pointer-events: none;
+}
+
+/* Submit button */
+.alaska-booking-widget__submit {
+	height: 56px;
+	width: 100%;
+	background: linear-gradient(135deg, #002b48, #00426a);
+	color: #fff;
+	font-family: var(--wp--preset--font-family--headline);
+	font-weight: 700;
+	border: none;
+	border-radius: var(--wp--custom--border-radius--lg);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	box-shadow: 0 4px 24px -4px rgba(25, 28, 29, 0.06);
+	font-size: var(--wp--preset--font-size--body-md);
+	transition: opacity 0.2s ease;
+}
+
+.alaska-booking-widget__submit:hover {
+	opacity: 0.92;
+}

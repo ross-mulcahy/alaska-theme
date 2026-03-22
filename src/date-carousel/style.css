@@ -1,0 +1,67 @@
+/* Block: alaska/date-carousel */
+
+.alaska-date-carousel {
+	display: flex;
+	flex-direction: row;
+	overflow-x: auto;
+	gap: 0;
+	scrollbar-width: none;
+}
+
+.alaska-date-carousel::-webkit-scrollbar {
+	display: none;
+}
+
+.alaska-date-carousel__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.25rem;
+	padding: 1rem 1.5rem;
+	cursor: pointer;
+	flex-shrink: 0;
+	border-bottom: 4px solid transparent;
+	transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.alaska-date-carousel__item:hover {
+	background-color: var(--wp--preset--color--surface-container-low);
+}
+
+.alaska-date-carousel__item--active {
+	background-color: var(--wp--preset--color--primary-fixed);
+	border-bottom-color: var(--wp--preset--color--primary);
+}
+
+.alaska-date-carousel__day {
+	font-size: var(--wp--preset--font-size--label-md);
+	font-weight: 600;
+	color: var(--wp--preset--color--on-surface-variant);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.alaska-date-carousel__item--active .alaska-date-carousel__day {
+	color: var(--wp--preset--color--primary);
+}
+
+.alaska-date-carousel__date {
+	font-family: var(--wp--preset--font-family--headline);
+	font-size: var(--wp--preset--font-size--body-md);
+	font-weight: 700;
+	color: var(--wp--preset--color--on-surface);
+}
+
+.alaska-date-carousel__item--active .alaska-date-carousel__date {
+	color: var(--wp--preset--color--primary);
+}
+
+.alaska-date-carousel__price {
+	font-size: var(--wp--preset--font-size--label-md);
+	font-weight: 600;
+	color: var(--wp--preset--color--tertiary);
+}
+
+.alaska-date-carousel__item--active .alaska-date-carousel__price {
+	color: var(--wp--preset--color--primary);
+}

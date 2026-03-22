@@ -1,0 +1,56 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "alaska/destination-cards",
+  "version": "1.0.0",
+  "title": "Destination Cards",
+  "category": "alaska-homepage",
+  "icon": "location-alt",
+  "description": "Grid of destination cards with images, prices, and hover effects.",
+  "textdomain": "alaska",
+  "attributes": {
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "destinations": {
+      "type": "array",
+      "default": [
+        {
+          "category": "City Break",
+          "name": "San Francisco",
+          "route": "Flights from Seattle",
+          "price": "$129*",
+          "image": "",
+          "link": "#"
+        },
+        {
+          "category": "European Getaway",
+          "name": "Paris",
+          "route": "Partner flights from SEA",
+          "price": "$645*",
+          "image": "",
+          "link": "#"
+        },
+        {
+          "category": "Island Paradise",
+          "name": "Maui",
+          "route": "Flights from Portland",
+          "price": "$389*",
+          "image": "",
+          "link": "#"
+        }
+      ]
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "render": "file:./render.php",
+  "style": "file:./style.css",
+  "editorScript": "file:./index.js"
+}

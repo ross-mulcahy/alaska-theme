@@ -1,0 +1,230 @@
+/* Block: alaska/flight-results */
+
+.alaska-flight-results {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	flex: 1;
+}
+
+/* Flight card */
+.alaska-flight-results__card {
+	background-color: var(--wp--preset--color--surface-container-lowest);
+	border-radius: var(--wp--custom--border-radius--xl);
+	box-shadow: 0 4px 24px -4px rgba(25, 28, 29, 0.06);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	transition: box-shadow 0.2s ease;
+}
+
+.alaska-flight-results__card:hover {
+	box-shadow: 0 8px 32px -4px rgba(25, 28, 29, 0.1);
+}
+
+/* Popular card variant */
+.alaska-flight-results__card--popular {
+	outline: 2px solid var(--wp--preset--color--primary);
+	position: relative;
+}
+
+.alaska-flight-results__badge {
+	position: absolute;
+	top: -0.75rem;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--on-primary);
+	font-size: var(--wp--preset--font-size--label-md);
+	font-weight: 700;
+	padding: 0.25rem 1rem;
+	border-radius: 9999px;
+	white-space: nowrap;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* Card body layout */
+.alaska-flight-results__body {
+	display: flex;
+	flex-direction: column;
+	padding: 1.5rem;
+}
+
+@media (min-width: 1280px) {
+	.alaska-flight-results__body {
+		flex-direction: row;
+		align-items: center;
+	}
+}
+
+/* Airline info */
+.alaska-flight-results__airline {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+@media (min-width: 1280px) {
+	.alaska-flight-results__airline {
+		margin-bottom: 0;
+		min-width: 10rem;
+	}
+}
+
+.alaska-flight-results__airline-icon {
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	background-color: var(--wp--preset--color--primary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--wp--preset--color--on-primary);
+	font-weight: 700;
+	font-size: var(--wp--preset--font-size--body-sm);
+	flex-shrink: 0;
+}
+
+.alaska-flight-results__airline-name {
+	font-family: var(--wp--preset--font-family--headline);
+	font-size: var(--wp--preset--font-size--body-sm);
+	font-weight: 700;
+	color: var(--wp--preset--color--primary);
+}
+
+.alaska-flight-results__flight-number {
+	font-size: var(--wp--preset--font-size--label-md);
+	color: var(--wp--preset--color--outline);
+}
+
+/* Route / time info */
+.alaska-flight-results__route {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	flex: 1;
+	margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1280px) {
+	.alaska-flight-results__route {
+		margin-bottom: 0;
+		justify-content: center;
+	}
+}
+
+.alaska-flight-results__time-block {
+	text-align: center;
+}
+
+.alaska-flight-results__time {
+	font-family: var(--wp--preset--font-family--headline);
+	font-size: var(--wp--preset--font-size--headline-sm);
+	font-weight: 700;
+	color: var(--wp--preset--color--on-surface);
+}
+
+.alaska-flight-results__airport {
+	font-size: var(--wp--preset--font-size--label-md);
+	color: var(--wp--preset--color--outline);
+	font-weight: 600;
+}
+
+/* Route line with dot */
+.alaska-flight-results__route-line {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	position: relative;
+	height: 2px;
+	background-color: var(--wp--preset--color--outline-variant);
+	min-width: 4rem;
+}
+
+.alaska-flight-results__route-dot {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: var(--wp--preset--color--primary);
+}
+
+.alaska-flight-results__duration {
+	position: absolute;
+	top: -1.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: var(--wp--preset--font-size--label-md);
+	color: var(--wp--preset--color--outline);
+	white-space: nowrap;
+}
+
+.alaska-flight-results__stops {
+	position: absolute;
+	bottom: -1.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: var(--wp--preset--font-size--label-md);
+	color: var(--wp--preset--color--tertiary);
+	white-space: nowrap;
+	font-weight: 600;
+}
+
+/* Pricing columns */
+.alaska-flight-results__pricing {
+	display: flex;
+	gap: 0;
+	border-top: 1px solid var(--wp--preset--color--surface-container);
+}
+
+@media (min-width: 1280px) {
+	.alaska-flight-results__pricing {
+		border-top: none;
+		border-left: 1px solid var(--wp--preset--color--surface-container);
+		margin-left: auto;
+	}
+}
+
+.alaska-flight-results__cabin {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem 1.5rem;
+	cursor: pointer;
+	border-right: 1px solid var(--wp--preset--color--surface-container);
+	transition: background-color 0.2s ease;
+}
+
+.alaska-flight-results__cabin:last-child {
+	border-right: none;
+}
+
+.alaska-flight-results__cabin:hover {
+	background-color: var(--wp--preset--color--surface-container-low);
+}
+
+.alaska-flight-results__cabin-label {
+	font-size: var(--wp--preset--font-size--label-md);
+	font-weight: 600;
+	color: var(--wp--preset--color--outline);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: 0.25rem;
+}
+
+.alaska-flight-results__cabin-price {
+	font-family: var(--wp--preset--font-family--headline);
+	font-size: var(--wp--preset--font-size--headline-sm);
+	font-weight: 700;
+	color: var(--wp--preset--color--primary);
+}
+
+.alaska-flight-results__cabin-miles {
+	font-size: var(--wp--preset--font-size--label-md);
+	color: var(--wp--preset--color--tertiary);
+}

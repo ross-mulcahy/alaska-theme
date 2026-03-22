@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "alaska/flight-filters",
+  "version": "1.0.0",
+  "title": "Flight Filters",
+  "category": "alaska-flight",
+  "icon": "filter",
+  "description": "Interactive filter sidebar for flight results.",
+  "textdomain": "alaska",
+  "attributes": {},
+  "supports": {
+    "html": false
+  },
+  "render": "file:./render.php",
+  "viewScriptModule": "file:./view.js",
+  "style": "file:./style.css",
+  "editorScript": "file:./index.js"
+}

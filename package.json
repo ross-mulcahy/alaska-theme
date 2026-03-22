@@ -1,0 +1,15 @@
+{
+	"name": "alaska-theme",
+	"version": "1.0.0",
+	"description": "Alaska Airlines WordPress Block Theme",
+	"scripts": {
+		"build": "wp-scripts build --webpack-src-dir=src --output-path=blocks",
+		"start": "wp-scripts start --webpack-src-dir=src --output-path=blocks"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^30.0.0"
+	},
+	"dependencies": {
+		"@wordpress/interactivity": "^6.0.0"
+	}
+}

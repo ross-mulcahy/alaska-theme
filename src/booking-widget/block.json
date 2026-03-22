@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "alaska/booking-widget",
+  "version": "1.0.0",
+  "title": "Booking Widget",
+  "category": "alaska-homepage",
+  "icon": "airplane",
+  "description": "Tabbed flight/hotel/car search form.",
+  "textdomain": "alaska",
+  "attributes": {
+    "actionUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "defaultFrom": {
+      "type": "string",
+      "default": "Seattle (SEA)"
+    },
+    "defaultTo": {
+      "type": "string",
+      "default": "San Francisco (SFO)"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "render": "file:./render.php",
+  "viewScriptModule": "file:./view.js",
+  "style": "file:./style.css",
+  "editorScript": "file:./index.js"
+}

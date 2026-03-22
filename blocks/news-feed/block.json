@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "alaska/news-feed",
+	"version": "1.0.0",
+	"title": "News Feed",
+	"category": "alaska-newsroom",
+	"icon": "rss",
+	"description": "Filterable article list with category chips and load more.",
+	"textdomain": "alaska",
+	"attributes": {
+		"postsPerPage": {
+			"type": "number",
+			"default": 3
+		},
+		"categories": {
+			"type": "array",
+			"default": []
+		},
+		"showFilters": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"render": "file:./render.php",
+	"style": "file:./style-index.css",
+	"editorScript": "file:./index.js"
+}

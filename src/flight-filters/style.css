@@ -1,0 +1,99 @@
+/* Block: alaska/flight-filters */
+
+.alaska-flight-filters {
+	width: 16rem;
+	flex-shrink: 0;
+}
+
+.alaska-flight-filters__section {
+	margin-bottom: 2rem;
+}
+
+.alaska-flight-filters__section-title {
+	font-family: var(--wp--preset--font-family--headline);
+	font-size: var(--wp--preset--font-size--body-sm);
+	font-weight: 700;
+	color: var(--wp--preset--color--primary);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: 1rem;
+}
+
+/* Filter items */
+.alaska-flight-filters__item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.75rem 1rem;
+	border-radius: var(--wp--custom--border-radius--md);
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	font-size: var(--wp--preset--font-size--body-sm);
+	color: var(--wp--preset--color--on-surface-variant);
+}
+
+.alaska-flight-filters__item:hover {
+	background-color: var(--wp--preset--color--surface-container-low);
+}
+
+.alaska-flight-filters__item--active {
+	background-color: var(--wp--preset--color--surface-container-high);
+	color: var(--wp--preset--color--primary);
+	font-weight: 600;
+}
+
+.alaska-flight-filters__item-icon {
+	font-size: 20px;
+	color: var(--wp--preset--color--outline);
+	flex-shrink: 0;
+}
+
+.alaska-flight-filters__item--active .alaska-flight-filters__item-icon {
+	color: var(--wp--preset--color--primary);
+}
+
+.alaska-flight-filters__item-label {
+	flex: 1;
+}
+
+.alaska-flight-filters__item-count {
+	font-size: var(--wp--preset--font-size--label-md);
+	color: var(--wp--preset--color--outline);
+	font-weight: 500;
+}
+
+/* Cabin class checkboxes */
+.alaska-flight-filters__checkbox {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.75rem 1rem;
+	cursor: pointer;
+	font-size: var(--wp--preset--font-size--body-sm);
+	color: var(--wp--preset--color--on-surface-variant);
+}
+
+.alaska-flight-filters__checkbox input[type="checkbox"] {
+	width: 1.125rem;
+	height: 1.125rem;
+	accent-color: var(--wp--preset--color--primary);
+	cursor: pointer;
+}
+
+.alaska-flight-filters__checkbox:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+/* Divider */
+.alaska-flight-filters__divider {
+	height: 1px;
+	background-color: var(--wp--preset--color--surface-container-high);
+	margin: 1rem 0;
+}
+
+@media (max-width: 1023px) {
+	.alaska-flight-filters {
+		width: 100%;
+	}
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "alaska/featured-article",
+  "version": "1.0.0",
+  "title": "Featured Article",
+  "category": "alaska-newsroom",
+  "icon": "media-document",
+  "description": "Large hero article card with gradient overlay.",
+  "textdomain": "alaska",
+  "attributes": {
+    "postId": {
+      "type": "number",
+      "default": 0
+    },
+    "useLatest": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "render": "file:./render.php",
+  "style": "file:./style.css",
+  "editorScript": "file:./index.js"
+}

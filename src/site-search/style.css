@@ -1,0 +1,98 @@
+/* Block: alaska/site-search */
+
+.alaska-site-search {
+	position: relative;
+	max-width: 32rem;
+	width: 100%;
+}
+
+/* Pill-shaped input wrapper */
+.alaska-site-search__input-wrap {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.alaska-site-search__icon {
+	position: absolute;
+	left: 1.25rem;
+	top: 50%;
+	transform: translateY(-50%);
+	color: var(--wp--preset--color--outline);
+	font-size: 20px;
+	pointer-events: none;
+}
+
+.alaska-site-search__input {
+	width: 100%;
+	padding: 0.875rem 1.25rem 0.875rem 3rem;
+	border-radius: 9999px;
+	border: none;
+	background-color: var(--wp--preset--color--surface-container-high);
+	font-size: var(--wp--preset--font-size--body-sm);
+	font-weight: 500;
+	color: var(--wp--preset--color--on-surface);
+	transition: box-shadow 0.2s ease;
+}
+
+.alaska-site-search__input:focus {
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(0, 43, 72, 0.2);
+}
+
+.alaska-site-search__input::placeholder {
+	color: var(--wp--preset--color--outline);
+}
+
+/* Dropdown */
+.alaska-site-search__dropdown {
+	position: absolute;
+	top: calc(100% + 0.5rem);
+	left: 0;
+	right: 0;
+	background-color: var(--wp--preset--color--surface-container-lowest);
+	border-radius: var(--wp--custom--border-radius--lg);
+	box-shadow: 0 8px 32px -4px rgba(25, 28, 29, 0.12);
+	overflow: hidden;
+	display: none;
+	z-index: 100;
+}
+
+.alaska-site-search__dropdown--open {
+	display: block;
+}
+
+/* Result items */
+.alaska-site-search__result {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.875rem 1.25rem;
+	text-decoration: none;
+	color: var(--wp--preset--color--on-surface);
+	transition: background-color 0.15s ease;
+}
+
+.alaska-site-search__result:hover {
+	background-color: var(--wp--preset--color--surface-container-low);
+}
+
+.alaska-site-search__result-title {
+	font-size: var(--wp--preset--font-size--body-sm);
+	font-weight: 600;
+	color: var(--wp--preset--color--primary);
+}
+
+.alaska-site-search__result-type {
+	font-size: var(--wp--preset--font-size--label-md);
+	color: var(--wp--preset--color--outline);
+	text-transform: capitalize;
+}
+
+/* No results */
+.alaska-site-search__no-results {
+	padding: 1.25rem;
+	text-align: center;
+	font-size: var(--wp--preset--font-size--body-sm);
+	color: var(--wp--preset--color--outline);
+}

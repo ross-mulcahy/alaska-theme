@@ -1,0 +1,198 @@
+/**
+ * Alaska Airlines — Custom Styles
+ * Effects and layouts that theme.json cannot express.
+ */
+
+/* ==========================================================================
+   Glassmorphism Navigation
+   ========================================================================== */
+
+.is-style-glass-nav {
+	background: rgba(248, 249, 250, 0.85);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+}
+
+/* ==========================================================================
+   Button Styles
+   ========================================================================== */
+
+.is-style-cta-gradient .wp-block-button__link,
+.is-style-cta-gradient > a {
+	background: linear-gradient(135deg, #002b48 0%, #00426a 100%) !important;
+	color: #ffffff !important;
+	border: none !important;
+}
+
+.is-style-tonal .wp-block-button__link,
+.is-style-tonal > a {
+	background-color: var(--wp--preset--color--surface-container-high) !important;
+	color: var(--wp--preset--color--primary) !important;
+	border: none !important;
+}
+
+.is-style-tonal .wp-block-button__link:hover,
+.is-style-tonal > a:hover {
+	background-color: var(--wp--preset--color--surface-container-highest) !important;
+}
+
+/* ==========================================================================
+   Ambient Shadows (Design System: 24px blur, -4px spread, 6% opacity)
+   ========================================================================== */
+
+.is-style-ambient-shadow {
+	box-shadow: 0 4px 24px -4px rgba(25, 28, 29, 0.06);
+}
+
+/* ==========================================================================
+   Surface Card Hover
+   ========================================================================== */
+
+.is-style-surface-card {
+	transition: background-color 0.2s ease;
+}
+
+.is-style-surface-card:hover {
+	background-color: var(--wp--preset--color--surface-container-highest) !important;
+}
+
+/* ==========================================================================
+   Ghost Border (20% opacity outline-variant for accessibility)
+   ========================================================================== */
+
+.has-ghost-border {
+	border: 1px solid rgba(194, 199, 207, 0.2);
+}
+
+/* ==========================================================================
+   Bento Grid (Premium page)
+   ========================================================================== */
+
+.alaska-bento-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 300px);
+	gap: 1.5rem;
+}
+
+.alaska-bento-grid .alaska-bento-large {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+.alaska-bento-grid .alaska-bento-wide {
+	grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+	.alaska-bento-grid {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+	}
+
+	.alaska-bento-grid .alaska-bento-large,
+	.alaska-bento-grid .alaska-bento-wide {
+		grid-column: span 1;
+		grid-row: span 1;
+	}
+}
+
+/* ==========================================================================
+   Image Hover Zoom
+   ========================================================================== */
+
+.alaska-hover-zoom {
+	overflow: hidden;
+}
+
+.alaska-hover-zoom img {
+	transition: transform 0.7s ease;
+}
+
+.alaska-hover-zoom:hover img {
+	transform: scale(1.1);
+}
+
+/* ==========================================================================
+   Material Symbols
+   ========================================================================== */
+
+.material-symbols-outlined {
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+/* ==========================================================================
+   Destination Card Aspect Ratio
+   ========================================================================== */
+
+.alaska-aspect-4-5 {
+	aspect-ratio: 4 / 5;
+}
+
+.alaska-aspect-21-9 {
+	aspect-ratio: 21 / 9;
+}
+
+.alaska-aspect-video {
+	aspect-ratio: 16 / 9;
+}
+
+/* ==========================================================================
+   Gradient Overlays
+   ========================================================================== */
+
+.alaska-gradient-bottom {
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+}
+
+.alaska-gradient-left {
+	background: linear-gradient(to right, rgba(0, 43, 72, 0.6) 0%, transparent 100%);
+}
+
+/* ==========================================================================
+   Category Eyebrow
+   ========================================================================== */
+
+.alaska-eyebrow {
+	font-size: 0.6875rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+}
+
+/* ==========================================================================
+   Flight Route Line
+   ========================================================================== */
+
+.alaska-route-line {
+	position: relative;
+	height: 2px;
+	background-color: var(--wp--preset--color--outline-variant);
+}
+
+.alaska-route-line::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: var(--wp--preset--color--primary);
+}
+
+/* ==========================================================================
+   Custom Scrollbar (for date carousel)
+   ========================================================================== */
+
+.alaska-scroll-hidden {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.alaska-scroll-hidden::-webkit-scrollbar {
+	display: none;
+}

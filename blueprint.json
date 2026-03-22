@@ -1,0 +1,35 @@
+{
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"features": {
+		"networking": true
+	},
+	"steps": [
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "url",
+				"url": "https://github-proxy.com/proxy/?repo=rossmulcahy/alaska-theme&directory=/"
+			}
+		},
+		{
+			"step": "activateTheme",
+			"themeFolderName": "alaska-theme"
+		},
+		{
+			"step": "setSiteOptions",
+			"options": {
+				"blogname": "Alaska Airlines",
+				"blogdescription": "The Elevated Voyager",
+				"show_on_front": "page"
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; $page_id = wp_insert_post(array('post_title' => 'Home', 'post_status' => 'publish', 'post_type' => 'page')); update_option('page_on_front', $page_id); update_option('show_on_front', 'page'); ?>"
+		}
+	]
+}

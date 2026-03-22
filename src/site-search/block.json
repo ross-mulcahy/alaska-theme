@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "alaska/site-search",
+  "version": "1.0.0",
+  "title": "Site Search",
+  "category": "widgets",
+  "icon": "search",
+  "description": "Autocomplete search bar with REST API integration.",
+  "textdomain": "alaska",
+  "attributes": {
+    "placeholder": {
+      "type": "string",
+      "default": "Search..."
+    },
+    "variant": {
+      "type": "string",
+      "default": "default"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "render": "file:./render.php",
+  "viewScriptModule": "file:./view.js",
+  "style": "file:./style.css",
+  "editorScript": "file:./index.js"
+}
