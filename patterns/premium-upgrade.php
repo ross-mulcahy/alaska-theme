@@ -22,8 +22,8 @@
 
 			<!-- wp:buttons -->
 			<div class="wp-block-buttons">
-				<!-- wp:button {"fontSize":"body-lg"} -->
-				<div class="wp-block-button has-custom-font-size has-body-lg-font-size"><a class="wp-block-button__link wp-element-button" href="#">Upgrade to Premium</a></div>
+				<!-- wp:button {"style":{"typography":{"fontSize":"1.125rem"}}} -->
+				<div class="wp-block-button"><a class="wp-block-button__link has-custom-font-size wp-element-button" style="font-size:1.125rem" href="#">Upgrade to Premium</a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->
