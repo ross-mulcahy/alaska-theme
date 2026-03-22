@@ -109,6 +109,61 @@ function alaska_register_block_styles() {
 add_action( 'init', 'alaska_register_block_styles' );
 
 /**
+ * Register Destinations custom post type.
+ */
+function alaska_register_destination_cpt() {
+	register_post_type( 'destination', array(
+		'labels'       => array(
+			'name'               => __( 'Destinations', 'alaska' ),
+			'singular_name'      => __( 'Destination', 'alaska' ),
+			'add_new'            => __( 'Add Destination', 'alaska' ),
+			'add_new_item'       => __( 'Add New Destination', 'alaska' ),
+			'edit_item'          => __( 'Edit Destination', 'alaska' ),
+			'new_item'           => __( 'New Destination', 'alaska' ),
+			'view_item'          => __( 'View Destination', 'alaska' ),
+			'search_items'       => __( 'Search Destinations', 'alaska' ),
+			'not_found'          => __( 'No destinations found', 'alaska' ),
+			'not_found_in_trash' => __( 'No destinations found in trash', 'alaska' ),
+			'menu_name'          => __( 'Destinations', 'alaska' ),
+		),
+		'public'       => true,
+		'has_archive'  => true,
+		'show_in_rest' => true,
+		'menu_icon'    => 'dashicons-location-alt',
+		'supports'     => array( 'title', 'thumbnail', 'custom-fields' ),
+		'rewrite'      => array( 'slug' => 'destinations' ),
+	) );
+
+	register_taxonomy( 'destination_category', 'destination', array(
+		'labels'            => array(
+			'name'          => __( 'Destination Categories', 'alaska' ),
+			'singular_name' => __( 'Destination Category', 'alaska' ),
+			'menu_name'     => __( 'Categories', 'alaska' ),
+		),
+		'hierarchical'      => true,
+		'public'            => true,
+		'show_in_rest'      => true,
+		'show_admin_column' => true,
+		'rewrite'           => array( 'slug' => 'destination-category' ),
+	) );
+
+	register_post_meta( 'destination', 'destination_route', array(
+		'type'         => 'string',
+		'single'       => true,
+		'default'      => '',
+		'show_in_rest' => true,
+	) );
+
+	register_post_meta( 'destination', 'destination_price', array(
+		'type'         => 'string',
+		'single'       => true,
+		'default'      => '',
+		'show_in_rest' => true,
+	) );
+}
+add_action( 'init', 'alaska_register_destination_cpt' );
+
+/**
  * Register custom blocks.
  */
 function alaska_register_blocks() {
