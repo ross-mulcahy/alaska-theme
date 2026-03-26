@@ -8,7 +8,7 @@
 ?>
 <!-- wp:cover {"overlayColor":"primary","isUserOverlayColor":true,"dimRatio":60,"minHeight":700,"minHeightUnit":"px","isDark":true,"align":"full","style":{"spacing":{"padding":{"left":"var:preset|spacing|40","right":"var:preset|spacing|40","top":"var:preset|spacing|120","bottom":"var:preset|spacing|120"}}}} -->
 <div class="wp-block-cover alignfull is-dark" style="padding-top:var(--wp--preset--spacing--120);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--120);padding-left:var(--wp--preset--spacing--40);min-height:700px"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim-60 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:group {"style":{"layout":{"selfStretch":"fixed","flexSize":"42rem"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group"><!-- wp:group {"layout":{"type":"constrained","contentSize":"42rem","justifyContent":"left"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"color":{"background":"#82c1fd","text":"#004f7e"},"typography":{"fontSize":"0.75rem","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.15em"},"spacing":{"padding":{"top":"0.25rem","bottom":"0.25rem","left":"0.75rem","right":"0.75rem"}},"border":{"radius":"4px"}}} -->
 <p class="has-text-color has-background" style="border-radius:4px;color:#004f7e;background-color:#82c1fd;padding-top:0.25rem;padding-right:0.75rem;padding-bottom:0.25rem;padding-left:0.75rem;font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase">Experience Elevated</p>
 <!-- /wp:paragraph -->
