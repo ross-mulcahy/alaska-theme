@@ -221,6 +221,11 @@
 					"fontWeight": "700"
 				}
 			},
+			"core/buttons": {
+				"spacing": {
+					"blockGap": "1rem"
+				}
+			},
 			"core/navigation": {
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--headline)",

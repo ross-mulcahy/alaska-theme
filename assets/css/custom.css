@@ -41,6 +41,16 @@ body {
    Button Styles
    ========================================================================== */
 
+/*
+ * Restore breathing room above button groups in content areas.
+ * The global blockGap is "0" (intentional, for full-bleed section stacking),
+ * which strips the natural gap between a paragraph/heading and a buttons row.
+ * Excluded from nav and header contexts where button groups sit inline.
+ */
+.wp-block-buttons:not(.wp-block-navigation .wp-block-buttons):not(header .wp-block-buttons) {
+	margin-block-start: 1.5rem;
+}
+
 .is-style-cta-gradient .wp-block-button__link,
 .is-style-cta-gradient > a {
 	background: linear-gradient(135deg, #002b48 0%, #00426a 100%) !important;
