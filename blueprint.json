@@ -23,7 +23,8 @@
 			"options": {
 				"blogname": "Alaska Airlines",
 				"blogdescription": "The Elevated Voyager",
-				"show_on_front": "page"
+				"show_on_front": "page",
+				"permalink_structure": "/%postname%/"
 			}
 		},
 		{
@@ -37,6 +38,14 @@
 		{
 			"step": "runPHP",
 			"code": "<?php require '/wordpress/wp-load.php'; wp_insert_post(array('post_title' => 'Premium Class', 'post_name' => 'premium', 'post_status' => 'publish', 'post_type' => 'page', 'page_template' => 'page-premium')); ?>"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; $news_id = wp_insert_post(array('post_title' => 'News', 'post_name' => 'news', 'post_status' => 'publish', 'post_type' => 'page')); update_option('page_for_posts', $news_id); ?>"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; flush_rewrite_rules(); ?>"
 		},
 		{
 			"step": "runPHP",
