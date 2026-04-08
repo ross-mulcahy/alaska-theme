@@ -56,10 +56,9 @@ $wrapper_attrs = get_block_wrapper_attributes( array(
 				<?php else : ?>
 					<div class="alaska-destination-cards__placeholder"></div>
 				<?php endif; ?>
-				<div class="alaska-destination-cards__overlay"></div>
 				<div class="alaska-destination-cards__text">
 					<?php if ( $category_name ) : ?>
-						<span class="alaska-eyebrow" style="color: #fff; opacity: 0.8;">
+						<span class="alaska-eyebrow">
 							<?php echo esc_html( $category_name ); ?>
 						</span>
 					<?php endif; ?>

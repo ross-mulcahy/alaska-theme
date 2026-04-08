@@ -3,7 +3,7 @@
 .alaska-destination-cards {
 	display: grid;
 	grid-template-columns: repeat(var(--columns, 4), 1fr);
-	gap: 1.5rem;
+	gap: 2rem;
 }
 
 @media (max-width: 1023px) {
@@ -18,95 +18,79 @@
 	}
 }
 
-/* Card — display:block so aspect-ratio applies to the <a> element */
+/* Card: a block-level <a>. The image holds the aspect ratio;
+   the text and meta flow naturally below. */
 .alaska-destination-cards__card {
-	position: relative;
 	display: block;
-	aspect-ratio: 4 / 5;
-	border-radius: var(--wp--custom--border-radius--xl);
-	overflow: hidden;
-	cursor: pointer;
 	text-decoration: none;
-	color: #fff;
+	color: inherit;
+	cursor: pointer;
 }
 
-/* Image and placeholder both absolutely fill the card so they
-   never push the card height past the aspect-ratio box. */
+/* Image / placeholder hold the 4:5 box, not the card itself. */
 .alaska-destination-cards__image,
 .alaska-destination-cards__placeholder {
-	position: absolute;
-	inset: 0;
+	display: block;
 	width: 100%;
-	height: 100%;
+	height: auto;
+	aspect-ratio: 4 / 5;
+	-o-object-fit: cover;
 	object-fit: cover;
+	border-radius: var(--wp--custom--border-radius--xl);
+	overflow: hidden;
 	transition: transform 0.5s ease;
 }
 
 .alaska-destination-cards__placeholder {
-	background: var(--wp--preset--color--surface-container);
+	background: linear-gradient(
+		135deg,
+		var(--wp--preset--color--surface-container-high),
+		var(--wp--preset--color--surface-container)
+	);
 }
 
 .alaska-destination-cards__card:hover .alaska-destination-cards__image {
-	transform: scale(1.1);
+	transform: scale(1.02);
 }
 
-/* Gradient overlay */
-.alaska-destination-cards__overlay {
-	position: absolute;
-	inset: 0;
-	background: linear-gradient(
-		to top,
-		rgba(0, 0, 0, 0.7) 0%,
-		rgba(0, 0, 0, 0.2) 40%,
-		transparent 70%
-	);
-	pointer-events: none;
-}
-
-/* Top label/title area, overlaid on the image */
+/* Text block sits below the image. */
 .alaska-destination-cards__text {
-	position: absolute;
-	left: 1.5rem;
-	right: 1.5rem;
-	bottom: 4rem;
-	color: #fff;
+	margin-top: 1.25rem;
+}
+
+.alaska-destination-cards__text .alaska-eyebrow {
+	color: var(--wp--preset--color--secondary);
+	font-size: var(--wp--preset--font-size--label-md);
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
 }
 
 .alaska-destination-cards__name {
 	font-family: var(--wp--preset--font-family--headline);
-	font-size: var(--wp--preset--font-size--headline-lg);
+	font-size: var(--wp--preset--font-size--headline-md);
 	font-weight: 700;
-	margin: 0.25rem 0 0;
-	color: #fff;
+	color: var(--wp--preset--color--primary);
+	margin: 0.35rem 0 0;
 }
 
-/* Bottom meta row: route + price, overlaid on the image */
+/* Meta row: route on the left, price on the right. */
 .alaska-destination-cards__meta {
-	position: absolute;
-	left: 1.5rem;
-	right: 1.5rem;
-	bottom: 1.25rem;
 	display: flex;
 	align-items: baseline;
 	justify-content: space-between;
 	gap: 0.5rem;
-	color: #fff;
+	margin-top: 0.75rem;
 }
 
 .alaska-destination-cards__route {
 	font-size: var(--wp--preset--font-size--body-sm);
-	font-weight: 500;
-	opacity: 0.85;
+	color: var(--wp--preset--color--on-surface-variant);
 }
 
 .alaska-destination-cards__price {
 	font-family: var(--wp--preset--font-family--headline);
 	font-size: var(--wp--preset--font-size--body-md);
-	font-weight: 700;
-}
-
-.alaska-destination-cards__price-label {
-	font-size: var(--wp--preset--font-size--label-md);
-	font-weight: 400;
-	opacity: 0.7;
+	font-weight: 800;
+	color: var(--wp--preset--color--primary);
 }
