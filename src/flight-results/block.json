@@ -63,6 +63,6 @@
   },
   "render": "file:./render.php",
   "viewScriptModule": "file:./view.js",
-  "style": "file:./style.css",
+  "style": "file:./style-index.css",
   "editorScript": "file:./index.js"
 }

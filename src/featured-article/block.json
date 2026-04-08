@@ -26,6 +26,6 @@
     ]
   },
   "render": "file:./render.php",
-  "style": "file:./style.css",
+  "style": "file:./style-index.css",
   "editorScript": "file:./index.js"
 }
