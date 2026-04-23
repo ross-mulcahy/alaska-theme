@@ -67,14 +67,57 @@ function alaska_enqueue_editor_assets() {
 add_action( 'enqueue_block_editor_assets', 'alaska_enqueue_editor_assets' );
 
 /**
+ * Register custom block categories.
+ *
+ * @param array $categories Existing block categories.
+ * @return array
+ */
+function alaska_register_block_categories( $categories ) {
+	$custom_categories = array(
+		array(
+			'slug'  => 'alaska-homepage',
+			'title' => __( 'Alaska Marketing', 'alaska' ),
+			'icon'  => null,
+		),
+		array(
+			'slug'  => 'alaska-newsroom',
+			'title' => __( 'Alaska Newsroom', 'alaska' ),
+			'icon'  => null,
+		),
+		array(
+			'slug'  => 'alaska-flight',
+			'title' => __( 'Alaska Travel Search', 'alaska' ),
+			'icon'  => null,
+		),
+	);
+
+	return array_merge( $categories, $custom_categories );
+}
+add_filter( 'block_categories_all', 'alaska_register_block_categories' );
+
+/**
  * Register block pattern categories.
  */
 function alaska_register_pattern_categories() {
-	register_block_pattern_category( 'alaska-homepage', array( 'label' => __( 'Alaska Homepage', 'alaska' ) ) );
-	register_block_pattern_category( 'alaska-premium', array( 'label' => __( 'Alaska Premium', 'alaska' ) ) );
-	register_block_pattern_category( 'alaska-newsroom', array( 'label' => __( 'Alaska Newsroom', 'alaska' ) ) );
-	register_block_pattern_category( 'alaska-article', array( 'label' => __( 'Alaska Article', 'alaska' ) ) );
-	register_block_pattern_category( 'alaska-flight', array( 'label' => __( 'Alaska Flight Results', 'alaska' ) ) );
+	$categories = array(
+		'alaska-homepage'      => __( 'Alaska Travel Sections', 'alaska' ),
+		'alaska-premium'       => __( 'Alaska Premium Sections', 'alaska' ),
+		'alaska-newsroom'      => __( 'Alaska Newsroom', 'alaska' ),
+		'alaska-article'       => __( 'Alaska Article Layouts', 'alaska' ),
+		'alaska-flight'        => __( 'Alaska Travel Search', 'alaska' ),
+		'alaska-finance'       => __( 'Finance Demo Sections', 'alaska' ),
+		'alaska-page-starters' => __( 'Page Starter Patterns', 'alaska' ),
+		'alaska-legal'         => __( 'Legal And Disclosure', 'alaska' ),
+	);
+
+	foreach ( $categories as $slug => $label ) {
+		register_block_pattern_category(
+			$slug,
+			array(
+				'label' => $label,
+			)
+		);
+	}
 }
 add_action( 'init', 'alaska_register_pattern_categories' );
 
@@ -200,7 +243,7 @@ function alaska_register_destination_cpt() {
 					'layout' => array( 'type' => 'constrained', 'contentSize' => '640px' ),
 				), array(
 					array( 'core/heading', array( 'level' => 2, 'content' => 'Ready to explore?', 'textColor' => 'on-primary', 'fontSize' => 'display-md', 'textAlign' => 'center' ) ),
-					array( 'core/paragraph', array( 'content' => 'Book your flight today and experience Alaska Airlines\' award-winning service.', 'textColor' => 'on-primary', 'fontSize' => 'body-lg', 'align' => 'center' ) ),
+					array( 'core/paragraph', array( 'content' => 'Add your approved destination CTA, fare details, and booking language here.', 'textColor' => 'on-primary', 'fontSize' => 'body-lg', 'align' => 'center' ) ),
 					array( 'core/buttons', array( 'layout' => array( 'type' => 'flex', 'justifyContent' => 'center' ) ), array(
 						array( 'core/button', array( 'text' => 'Search Flights', 'backgroundColor' => 'on-primary', 'textColor' => 'primary' ) ),
 					) ),

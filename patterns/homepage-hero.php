@@ -4,7 +4,10 @@
  * Slug: alaska/homepage-hero
  * Categories: alaska-homepage
  * Description: Hero section with background image and booking widget.
+ * Keywords: hero, booking, travel, homepage
  */
+
+$flights_url = esc_url( home_url( '/flights/' ) );
 ?>
 <!-- wp:cover {"overlayColor":"primary","isUserOverlayColor":true,"dimRatio":20,"minHeight":640,"minHeightUnit":"px","isDark":true,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|120","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
 <div class="wp-block-cover alignfull is-dark" style="padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--120);padding-left:var(--wp--preset--spacing--30);min-height:640px"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim-20 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"type":"constrained"}} -->
@@ -18,6 +21,6 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:alaska/booking-widget {"actionUrl":"/flights/","defaultFrom":"Seattle (SEA)","defaultTo":"San Francisco (SFO)"} /--></div>
+<!-- wp:alaska/booking-widget {"actionUrl":"<?php echo $flights_url; ?>","defaultFrom":"Seattle (SEA)","defaultTo":"San Francisco (SFO)"} /--></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover -->

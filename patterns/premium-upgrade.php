@@ -4,7 +4,10 @@
  * Slug: alaska/premium-upgrade
  * Categories: alaska-premium
  * Description: Split image/text upgrade CTA section.
+ * Keywords: premium, upgrade, CTA, travel
  */
+
+$upgrade_url = esc_url( home_url( '/premium/' ) );
 ?>
 <!-- wp:group {"align":"full","backgroundColor":"surface-container-low","style":{"spacing":{"padding":{"top":"var:preset|spacing|120","bottom":"var:preset|spacing|120"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-surface-container-low-background-color has-background" style="padding-top:var(--wp--preset--spacing--120);padding-bottom:var(--wp--preset--spacing--120)"><!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|80"}}}} -->
@@ -19,7 +22,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"style":{"typography":{"fontSize":"1.125rem"}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-custom-font-size wp-element-button" style="font-size:1.125rem" href="#">Upgrade to Premium</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-custom-font-size wp-element-button" style="font-size:1.125rem" href="<?php echo $upgrade_url; ?>">Upgrade to Premium</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->

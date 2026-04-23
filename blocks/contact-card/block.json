@@ -11,19 +11,19 @@
   "attributes": {
     "title": {
       "type": "string",
-      "default": "Media Inquiries"
+      "default": "Editorial Contact"
     },
     "email": {
       "type": "string",
-      "default": "newsroom@alaskaair.com"
+      "default": "editorial@example.com"
     },
     "phone": {
       "type": "string",
-      "default": "+1 (206) 304-0008"
+      "default": "+1 (206) 555-0100"
     },
     "note": {
       "type": "string",
-      "default": "Available 24/7 for credentialed media members only."
+      "default": "Replace with your approved newsroom, marketing, or compliance contact."
     },
     "variant": {
       "type": "string",

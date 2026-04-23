@@ -4,6 +4,7 @@
  * Slug: alaska/flight-results-hero
  * Categories: alaska-flight
  * Description: Search summary bar with route and edit button. Reads URL params from booking widget.
+ * Keywords: flights, search, summary, hero
  */
 
 // Read search params from URL (set by booking widget form).
@@ -24,7 +25,7 @@ $dates = ! empty( $_GET['dates'] ) ? sanitize_text_field( wp_unslash( $_GET['dat
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"style":{"typography":{"fontSize":"0.875rem"}}} -->
-<div class="wp-block-button"><a class="wp-block-button__link has-custom-font-size wp-element-button" style="font-size:0.875rem" href="/">Edit search</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link has-custom-font-size wp-element-button" style="font-size:0.875rem" href="<?php echo esc_url( home_url( '/' ) ); ?>">Edit search</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->

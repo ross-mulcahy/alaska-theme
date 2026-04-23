@@ -4,7 +4,10 @@
  * Slug: alaska/premium-hero
  * Categories: alaska-premium
  * Description: Full-bleed hero for Premium Class page.
+ * Keywords: hero, premium, travel, landing page
  */
+
+$premium_url = esc_url( home_url( '/premium/' ) );
 ?>
 <!-- wp:cover {"overlayColor":"primary","isUserOverlayColor":true,"dimRatio":60,"minHeight":700,"minHeightUnit":"px","isDark":true,"align":"full","style":{"spacing":{"padding":{"left":"var:preset|spacing|40","right":"var:preset|spacing|40","top":"var:preset|spacing|120","bottom":"var:preset|spacing|120"}}}} -->
 <div class="wp-block-cover alignfull is-dark" style="padding-top:var(--wp--preset--spacing--120);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--120);padding-left:var(--wp--preset--spacing--40);min-height:700px"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim-60 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"type":"constrained"}} -->
@@ -23,7 +26,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-cta-gradient","style":{"typography":{"fontSize":"1.125rem"}}} -->
-<div class="wp-block-button is-style-cta-gradient"><a class="wp-block-button__link has-custom-font-size wp-element-button" style="font-size:1.125rem" href="#">Explore Comfort →</a></div>
+<div class="wp-block-button is-style-cta-gradient"><a class="wp-block-button__link has-custom-font-size wp-element-button" style="font-size:1.125rem" href="<?php echo $premium_url; ?>">Explore Comfort →</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

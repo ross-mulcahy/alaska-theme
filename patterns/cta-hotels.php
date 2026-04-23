@@ -4,7 +4,10 @@
  * Slug: alaska/cta-hotels
  * Categories: alaska-homepage
  * Description: Hotels and accommodation call-to-action card.
+ * Keywords: CTA, hotels, stays, travel
  */
+
+$hotels_url = esc_url( home_url( '/hotels/' ) );
 ?>
 <!-- wp:group {"backgroundColor":"surface-container-lowest","style":{"border":{"radius":"1rem"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}},"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch","verticalAlignment":"space-between"}} -->
 <div class="wp-block-group has-surface-container-lowest-background-color has-background" style="border-radius:1rem;min-height:100%;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:group {"layout":{"type":"default"}} -->
@@ -23,7 +26,7 @@
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-tonal","style":{"typography":{"fontSize":"0.875rem"}},"width":100} -->
-<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-tonal"><a class="wp-block-button__link has-custom-font-size wp-element-button" style="font-size:0.875rem" href="#">Find Hotels →</a></div>
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-tonal"><a class="wp-block-button__link has-custom-font-size wp-element-button" style="font-size:0.875rem" href="<?php echo $hotels_url; ?>">Find Hotels →</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group -->
