@@ -22,8 +22,7 @@ if ( ! $featured_post ) {
 	return;
 }
 
-$image_url  = get_the_post_thumbnail_url( $featured_post->ID, 'large' );
-$image_url  = $image_url ? $image_url : get_post_meta( $featured_post->ID, 'alaska_demo_image_url', true );
+$image_url  = alaska_get_demo_image_url( $featured_post->ID, 'large' );
 $categories = get_the_category( $featured_post->ID );
 $cat_name   = ! empty( $categories ) ? $categories[0]->name : 'Latest News';
 $date       = get_the_date( '', $featured_post );
@@ -37,16 +36,12 @@ $wrapper_attrs = get_block_wrapper_attributes( array(
 <div <?php echo $wrapper_attrs; ?>>
 	<a href="<?php echo esc_url( $permalink ); ?>" class="alaska-featured-article__link alaska-hover-zoom">
 		<div class="alaska-featured-article__image-wrap alaska-aspect-21-9">
-			<?php if ( $image_url ) : ?>
-				<img
-					src="<?php echo esc_url( $image_url ); ?>"
-					alt="<?php echo esc_attr( $featured_post->post_title ); ?>"
-					class="alaska-featured-article__image"
-					loading="lazy"
-				/>
-			<?php else : ?>
-				<div class="alaska-featured-article__placeholder"></div>
-			<?php endif; ?>
+			<img
+				src="<?php echo esc_url( $image_url ); ?>"
+				alt="<?php echo esc_attr( $featured_post->post_title ); ?>"
+				class="alaska-featured-article__image"
+				loading="lazy"
+			/>
 			<div class="alaska-featured-article__overlay"></div>
 			<div class="alaska-featured-article__content">
 				<span class="alaska-featured-article__badge"><?php echo esc_html( $cat_name ); ?></span>

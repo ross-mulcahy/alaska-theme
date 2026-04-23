@@ -239,6 +239,41 @@ function alaska_register_destination_cpt() {
 		'default'      => '',
 		'show_in_rest' => true,
 	) );
+
+	register_post_meta( 'destination', 'destination_airport_code', array(
+		'type'         => 'string',
+		'single'       => true,
+		'default'      => '',
+		'show_in_rest' => true,
+	) );
+
+	register_post_meta( 'destination', 'destination_best_for', array(
+		'type'         => 'string',
+		'single'       => true,
+		'default'      => '',
+		'show_in_rest' => true,
+	) );
+
+	register_post_meta( 'destination', 'destination_flight_time', array(
+		'type'         => 'string',
+		'single'       => true,
+		'default'      => '',
+		'show_in_rest' => true,
+	) );
+
+	register_post_meta( 'destination', 'destination_best_season', array(
+		'type'         => 'string',
+		'single'       => true,
+		'default'      => '',
+		'show_in_rest' => true,
+	) );
+
+	register_post_meta( 'destination', 'destination_hero_kicker', array(
+		'type'         => 'string',
+		'single'       => true,
+		'default'      => '',
+		'show_in_rest' => true,
+	) );
 }
 add_action( 'init', 'alaska_register_destination_cpt' );
 
@@ -269,6 +304,228 @@ function alaska_register_demo_media_meta() {
 	);
 }
 add_action( 'init', 'alaska_register_demo_media_meta' );
+
+/**
+ * Get the preferred newsroom URL.
+ *
+ * @return string
+ */
+function alaska_get_newsroom_url() {
+	$newsroom_page = get_page_by_path( 'newsroom' );
+
+	if ( $newsroom_page instanceof WP_Post ) {
+		return get_permalink( $newsroom_page );
+	}
+
+	$legacy_page = get_page_by_path( 'news' );
+
+	if ( $legacy_page instanceof WP_Post ) {
+		return get_permalink( $legacy_page );
+	}
+
+	return home_url( '/newsroom/' );
+}
+
+/**
+ * Get the destination archive URL.
+ *
+ * @return string
+ */
+function alaska_get_destinations_url() {
+	return get_post_type_archive_link( 'destination' ) ?: home_url( '/destinations/' );
+}
+
+/**
+ * Build a branded fallback image data URI.
+ *
+ * @param string $label Image label.
+ * @return string
+ */
+function alaska_get_demo_placeholder_data_uri( $label = '' ) {
+	$text = trim( wp_strip_all_tags( $label ) );
+	$text = $text ? $text : __( 'Alaska Demo', 'alaska' );
+	$text = function_exists( 'mb_substr' ) ? mb_substr( $text, 0, 36 ) : substr( $text, 0, 36 );
+
+	$svg = sprintf(
+		'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="%1$s"><defs><linearGradient id="a" x1="0" x2="1" y1="0" y2="1"><stop offset="0%%" stop-color="#002b48"/><stop offset="100%%" stop-color="#136299"/></linearGradient></defs><rect width="1600" height="1000" fill="url(#a)"/><circle cx="1280" cy="220" r="240" fill="rgba(255,255,255,0.08)"/><circle cx="280" cy="800" r="320" fill="rgba(255,255,255,0.06)"/><text x="120" y="770" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="8">%2$s</text><text x="120" y="860" fill="#ffffff" font-family="Manrope, Arial, sans-serif" font-size="112" font-weight="800">%1$s</text></svg>',
+		esc_html( $text ),
+		esc_html__( 'ALASKA', 'alaska' )
+	);
+
+	return 'data:image/svg+xml;charset=UTF-8,' . rawurlencode( $svg );
+}
+
+/**
+ * Resolve a post image URL using featured media, demo meta, or a branded fallback.
+ *
+ * @param int    $post_id Post ID.
+ * @param string $size Image size.
+ * @param string $label Fallback label.
+ * @return string
+ */
+function alaska_get_demo_image_url( $post_id, $size = 'large', $label = '' ) {
+	$image_url = get_the_post_thumbnail_url( $post_id, $size );
+
+	if ( $image_url ) {
+		return $image_url;
+	}
+
+	$meta_url = get_post_meta( $post_id, 'alaska_demo_image_url', true );
+
+	if ( $meta_url ) {
+		return $meta_url;
+	}
+
+	$label = $label ? $label : get_the_title( $post_id );
+
+	return alaska_get_demo_placeholder_data_uri( $label );
+}
+
+/**
+ * Redirect legacy newsroom page requests to the canonical newsroom landing page.
+ */
+function alaska_redirect_legacy_news_page() {
+	if ( ! is_page( 'news' ) ) {
+		return;
+	}
+
+	$newsroom_page = get_page_by_path( 'newsroom' );
+
+	if ( ! $newsroom_page instanceof WP_Post ) {
+		return;
+	}
+
+	wp_safe_redirect( get_permalink( $newsroom_page ), 301 );
+	exit;
+}
+add_action( 'template_redirect', 'alaska_redirect_legacy_news_page' );
+
+/**
+ * Register destination detail meta box.
+ */
+function alaska_register_destination_meta_box() {
+	add_meta_box(
+		'alaska-destination-details',
+		__( 'Destination Details', 'alaska' ),
+		'alaska_render_destination_meta_box',
+		'destination',
+		'side',
+		'default'
+	);
+}
+add_action( 'add_meta_boxes_destination', 'alaska_register_destination_meta_box' );
+
+/**
+ * Render destination detail meta box.
+ *
+ * @param WP_Post $post Current post object.
+ */
+function alaska_render_destination_meta_box( $post ) {
+	wp_nonce_field( 'alaska_save_destination_details', 'alaska_destination_details_nonce' );
+
+	$fields = array(
+		'destination_route'        => __( 'Route Label', 'alaska' ),
+		'destination_price'        => __( 'Starting Fare', 'alaska' ),
+		'destination_airport_code' => __( 'Airport Code', 'alaska' ),
+		'destination_best_for'     => __( 'Best For', 'alaska' ),
+		'destination_flight_time'  => __( 'Flight Time', 'alaska' ),
+		'destination_best_season'  => __( 'Best Season', 'alaska' ),
+		'destination_hero_kicker'  => __( 'Hero Kicker', 'alaska' ),
+		'alaska_demo_image_url'    => __( 'Demo Image URL', 'alaska' ),
+	);
+
+	echo '<div class="alaska-destination-meta-box">';
+
+	foreach ( $fields as $meta_key => $label ) {
+		$value = get_post_meta( $post->ID, $meta_key, true );
+		printf(
+			'<p><label for="%1$s" style="display:block;font-weight:600;margin-bottom:0.35rem;">%2$s</label><input id="%1$s" name="%1$s" type="text" value="%3$s" style="width:100%%;" /></p>',
+			esc_attr( $meta_key ),
+			esc_html( $label ),
+			esc_attr( $value )
+		);
+	}
+
+	echo '</div>';
+}
+
+/**
+ * Save destination detail meta.
+ *
+ * @param int $post_id Post ID.
+ */
+function alaska_save_destination_meta_box( $post_id ) {
+	if ( ! isset( $_POST['alaska_destination_details_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['alaska_destination_details_nonce'] ) ), 'alaska_save_destination_details' ) ) {
+		return;
+	}
+
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+
+	$fields = array(
+		'destination_route',
+		'destination_price',
+		'destination_airport_code',
+		'destination_best_for',
+		'destination_flight_time',
+		'destination_best_season',
+		'destination_hero_kicker',
+		'alaska_demo_image_url',
+	);
+
+	foreach ( $fields as $field ) {
+		if ( ! isset( $_POST[ $field ] ) ) {
+			continue;
+		}
+
+		$value = sanitize_text_field( wp_unslash( $_POST[ $field ] ) );
+		update_post_meta( $post_id, $field, $value );
+	}
+}
+add_action( 'save_post_destination', 'alaska_save_destination_meta_box' );
+
+/**
+ * Register dashboard guidance widget.
+ */
+function alaska_register_demo_dashboard_widget() {
+	wp_add_dashboard_widget(
+		'alaska-demo-guide',
+		__( 'Alaska Demo Guide', 'alaska' ),
+		'alaska_render_demo_dashboard_widget'
+	);
+}
+add_action( 'wp_dashboard_setup', 'alaska_register_demo_dashboard_widget' );
+
+/**
+ * Render dashboard guidance widget.
+ */
+function alaska_render_demo_dashboard_widget() {
+	$front_page_id = (int) get_option( 'page_on_front' );
+	$front_url     = $front_page_id ? get_permalink( $front_page_id ) : home_url( '/' );
+	$newsroom_url  = alaska_get_newsroom_url();
+	$flights_page  = get_page_by_path( 'flights' );
+	$contact_page  = get_page_by_path( 'contact' );
+	$front_edit    = $front_page_id ? get_edit_post_link( $front_page_id ) : '';
+	$flights_edit  = $flights_page instanceof WP_Post ? get_edit_post_link( $flights_page->ID ) : '';
+	$contact_edit  = $contact_page instanceof WP_Post ? get_edit_post_link( $contact_page->ID ) : '';
+	?>
+	<p><?php esc_html_e( 'Use these editor-owned surfaces to keep the demo fresh without touching theme templates.', 'alaska' ); ?></p>
+	<ul style="list-style:disc;padding-left:1.2rem;">
+		<li><?php if ( $front_edit ) : ?><a href="<?php echo esc_url( $front_edit ); ?>"><?php esc_html_e( 'Homepage content', 'alaska' ); ?></a><?php else : ?><?php esc_html_e( 'Homepage content', 'alaska' ); ?><?php endif; ?> <?php echo esc_html( $front_url ); ?></li>
+		<li><a href="<?php echo esc_url( admin_url( 'edit.php?post_type=destination' ) ); ?>"><?php esc_html_e( 'Destinations library', 'alaska' ); ?></a> <?php echo esc_html( alaska_get_destinations_url() ); ?></li>
+		<li><a href="<?php echo esc_url( admin_url( 'edit-tags.php?taxonomy=destination_category&post_type=destination' ) ); ?>"><?php esc_html_e( 'Destination categories', 'alaska' ); ?></a></li>
+		<li><?php if ( $flights_edit ) : ?><a href="<?php echo esc_url( $flights_edit ); ?>"><?php esc_html_e( 'Flights experience shell', 'alaska' ); ?></a><?php else : ?><?php esc_html_e( 'Flights experience shell', 'alaska' ); ?><?php endif; ?></li>
+		<li><a href="<?php echo esc_url( $newsroom_url ); ?>"><?php esc_html_e( 'Newsroom landing', 'alaska' ); ?></a> <?php echo esc_html( $newsroom_url ); ?></li>
+		<li><?php if ( $contact_edit ) : ?><a href="<?php echo esc_url( $contact_edit ); ?>"><?php esc_html_e( 'Contact page', 'alaska' ); ?></a><?php else : ?><?php esc_html_e( 'Contact page', 'alaska' ); ?><?php endif; ?></li>
+	</ul>
+	<p><code>wp alaska-airlines-demo status</code> <?php esc_html_e( 'reports the active demo setup and missing media counts.', 'alaska' ); ?></p>
+	<?php
+}
 
 /**
  * Register custom blocks.

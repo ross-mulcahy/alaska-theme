@@ -7,9 +7,9 @@
  * Keywords: newsroom, support, contact, links
  */
 
-$news_url         = home_url( '/news/' );
+$news_url         = alaska_get_newsroom_url();
 $premium_url      = home_url( '/premium/' );
-$destinations_url = home_url( '/destinations/' );
+$destinations_url = alaska_get_destinations_url();
 $flights_url      = home_url( '/flights/' );
 $feed_url         = home_url( '/feed/' );
 ?>

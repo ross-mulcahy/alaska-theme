@@ -2,9 +2,15 @@
 
 <!-- wp:cover {"useFeaturedImage":true,"dimRatio":60,"overlayColor":"primary","isUserOverlayColor":true,"minHeight":560,"minHeightUnit":"px","contentPosition":"bottom left","isDark":true,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|120","bottom":"var:preset|spacing|80","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-cover alignfull is-dark has-custom-content-position is-position-bottom-left" style="padding-top:var(--wp--preset--spacing--120);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--40);min-height:560px"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim-60 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"type":"constrained","contentSize":"1280px","justifyContent":"left"}} -->
-<div class="wp-block-group"><!-- wp:post-terms {"term":"destination_category","style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.1em"},"elements":{"link":{"color":{"text":"#ffffff"}}},"color":{"text":"#ffffff"},"spacing":{"padding":{"top":"0.25rem","bottom":"0.25rem","left":"0.75rem","right":"0.75rem"}},"border":{"radius":"9999px"},"color":{"background":"#136299"}}} /-->
+<div class="wp-block-group"><!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.15em"},"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}},"textColor":"secondary","metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"destination_hero_kicker"}}}}} -->
+<p class="has-secondary-color has-text-color" style="margin-bottom:var(--wp--preset--spacing--20);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-terms {"term":"destination_category","style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.1em"},"elements":{"link":{"color":{"text":"#ffffff"}}},"color":{"text":"#ffffff"},"spacing":{"padding":{"top":"0.25rem","bottom":"0.25rem","left":"0.75rem","right":"0.75rem"}},"border":{"radius":"9999px"},"color":{"background":"#136299"}}} /-->
 
 <!-- wp:post-title {"level":1,"style":{"typography":{"fontSize":"clamp(2.5rem, 6vw, 5rem)","fontWeight":"800","lineHeight":"1","letterSpacing":"-0.025em"}},"textColor":"on-primary"} /-->
+
+<!-- wp:post-excerpt {"textColor":"on-primary","fontSize":"body-lg","excerptLength":32,"style":{"spacing":{"margin":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}}}} /-->
 
 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"},"style":{"spacing":{"blockGap":"2rem","margin":{"bottom":"var:preset|spacing|40"}}}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--40)"><!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.8)"},"typography":{"fontSize":"0.875rem"}},"metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"destination_route"}}}}} -->
@@ -19,11 +25,129 @@
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-cta-gradient","style":{"typography":{"fontSize":"1rem"}}} -->
 <div class="wp-block-button is-style-cta-gradient"><a class="wp-block-button__link has-custom-font-size wp-element-button" style="font-size:1rem" href="/flights/">Search Flights →</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"className":"is-style-tonal","style":{"typography":{"fontSize":"1rem"}}} -->
+<div class="wp-block-button is-style-tonal"><a class="wp-block-button__link has-custom-font-size wp-element-button" style="font-size:1rem" href="/destinations/">View All Destinations</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div></div>
 <!-- /wp:cover -->
 
-<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|90","bottom":"var:preset|spacing|100","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--90);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--100);padding-left:var(--wp--preset--spacing--30)"><!-- wp:columns {"verticalAlignment":"top","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|60","top":"var:preset|spacing|50"}}}} -->
+<div class="wp-block-columns are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top","width":"62%"} -->
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:62%"><!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.15em"}},"textColor":"secondary"} -->
+<p class="has-secondary-color has-text-color" style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em">Destination Guide</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"fontSize":"display-sm"} -->
+<h2 class="wp-block-heading has-display-sm-font-size">Plan the trip with confidence</h2>
+<!-- /wp:heading -->
+
+<!-- wp:post-content {"layout":{"type":"default"}} /--></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"top","width":"38%"} -->
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:38%"><!-- wp:group {"backgroundColor":"surface-container-lowest","style":{"border":{"radius":"1rem"},"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"default"}} -->
+<div class="wp-block-group has-surface-container-lowest-background-color has-background" style="border-radius:1rem;padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"><!-- wp:heading {"level":3,"fontSize":"headline-sm"} -->
+<h3 class="wp-block-heading has-headline-sm-font-size">Trip Snapshot</h3>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.12em"}},"textColor":"secondary"} -->
+<p class="has-secondary-color has-text-color" style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em">Route</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"body-lg","metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"destination_route"}}}}} -->
+<p class="has-body-lg-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.12em"}},"textColor":"secondary"} -->
+<p class="has-secondary-color has-text-color" style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em">Starting Fare</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"2rem","fontWeight":"800","letterSpacing":"-0.03em"}},"textColor":"primary","metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"destination_price"}}}}} -->
+<p class="has-primary-color has-text-color" style="font-size:2rem;font-weight:800;letter-spacing:-0.03em"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator {"backgroundColor":"outline-variant","className":"is-style-wide"} -->
+<hr class="wp-block-separator has-text-color has-outline-variant-color has-alpha-channel-opacity has-outline-variant-background-color has-background is-style-wide"/>
+<!-- /wp:separator -->
+
+<!-- wp:columns -->
+<div class="wp-block-columns"><!-- wp:column -->
+<div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.12em"}},"textColor":"secondary"} -->
+<p class="has-secondary-color has-text-color" style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em">Airport</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"body-md","metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"destination_airport_code"}}}}} -->
+<p class="has-body-md-font-size"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column -->
+
+<!-- wp:column -->
+<div class="wp-block-column"><!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.12em"}},"textColor":"secondary"} -->
+<p class="has-secondary-color has-text-color" style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em">Flight Time</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"body-md","metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"destination_flight_time"}}}}} -->
+<p class="has-body-md-font-size"></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.12em"}},"textColor":"secondary"} -->
+<p class="has-secondary-color has-text-color" style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em">Best For</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"body-md","metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"destination_best_for"}}}}} -->
+<p class="has-body-md-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.12em"}},"textColor":"secondary"} -->
+<p class="has-secondary-color has-text-color" style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em">Best Season</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"fontSize":"body-md","metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"destination_best_season"}}}}} -->
+<p class="has-body-md-font-size"></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:post-terms {"term":"destination_category","style":{"typography":{"fontSize":"0.875rem"}},"textColor":"on-surface-variant"} /-->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-cta-gradient"} -->
+<div class="wp-block-button is-style-cta-gradient"><a class="wp-block-button__link wp-element-button" href="/flights/">Book This Route</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->
+
+<!-- wp:spacer {"height":"1.5rem"} -->
+<div style="height:1.5rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:alaska/contact-card {"title":"Need help planning?","email":"guestcare@alaskaair.com","phone":"1-800-252-7522","note":"Reach out for itinerary help, accessibility planning, and day-of-travel questions.","variant":"light"} /--></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"full","backgroundColor":"surface-container-low","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|100","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-surface-container-low-background-color has-background" style="padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--100);padding-left:var(--wp--preset--spacing--30)"><!-- wp:paragraph {"style":{"typography":{"fontSize":"0.75rem","fontWeight":"700","textTransform":"uppercase","letterSpacing":"0.15em"}},"textColor":"secondary"} -->
+<p class="has-secondary-color has-text-color" style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em">Keep Exploring</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"fontSize":"display-sm"} -->
+<h2 class="wp-block-heading has-display-sm-font-size">More destinations to explore</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"textColor":"on-surface-variant","fontSize":"body-lg"} -->
+<p class="has-on-surface-variant-color has-text-color has-body-lg-font-size">Use the destination library as a flexible demo surface for city breaks, island escapes, and seasonal route campaigns.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:spacer {"height":"2rem"} -->
+<div style="height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
+
+<!-- wp:alaska/destination-cards {"columns":3,"postsToShow":3,"orderBy":"title","order":"asc"} /--></div>
+<!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","area":"footer"} /-->

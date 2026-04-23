@@ -29,6 +29,18 @@ if ( ! empty( $destination_category ) ) {
 			'terms'    => (int) $destination_category,
 		),
 	);
+} elseif ( is_tax( 'destination_category' ) ) {
+	$queried_term = get_queried_object();
+
+	if ( $queried_term instanceof WP_Term ) {
+		$query_args['tax_query'] = array(
+			array(
+				'taxonomy' => 'destination_category',
+				'field'    => 'term_id',
+				'terms'    => (int) $queried_term->term_id,
+			),
+		);
+	}
 }
 
 $destinations_query = new WP_Query( $query_args );
@@ -44,21 +56,31 @@ $wrapper_attrs = get_block_wrapper_attributes( array(
 			<?php
 			$route         = get_post_meta( get_the_ID(), 'destination_route', true );
 			$price         = get_post_meta( get_the_ID(), 'destination_price', true );
-			$image_url     = get_the_post_thumbnail_url( get_the_ID(), 'large' );
-			$image_url     = $image_url ? $image_url : get_post_meta( get_the_ID(), 'alaska_demo_image_url', true );
+			$thumbnail_id  = get_post_thumbnail_id( get_the_ID() );
+			$image_url     = alaska_get_demo_image_url( get_the_ID(), 'large' );
 			$terms         = get_the_terms( get_the_ID(), 'destination_category' );
 			$category_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : '';
 			?>
 			<a href="<?php the_permalink(); ?>" class="alaska-destination-cards__card">
-				<?php if ( $image_url ) : ?>
+				<?php if ( $thumbnail_id ) : ?>
+					<?php
+					echo wp_get_attachment_image(
+						$thumbnail_id,
+						'large',
+						false,
+						array(
+							'class'   => 'alaska-destination-cards__image',
+							'loading' => 'lazy',
+						)
+					);
+					?>
+				<?php else : ?>
 					<img
 						src="<?php echo esc_url( $image_url ); ?>"
 						alt="<?php echo esc_attr( get_the_title() ); ?>"
 						class="alaska-destination-cards__image"
 						loading="lazy"
 					/>
-				<?php else : ?>
-					<div class="alaska-destination-cards__placeholder"></div>
 				<?php endif; ?>
 				<div class="alaska-destination-cards__text">
 					<?php if ( $category_name ) : ?>

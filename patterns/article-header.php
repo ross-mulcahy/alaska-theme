@@ -7,7 +7,7 @@
  * Keywords: article, header, newsroom, featured image
  */
 
-$news_url = home_url( '/news/' );
+$news_url = alaska_get_newsroom_url();
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}},"layout":{"type":"constrained","wideSize":"1536px"}} -->
 <div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-left:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30)"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"},"style":{"spacing":{"blockGap":"0.5rem","margin":{"bottom":"var:preset|spacing|20"}}}} -->
