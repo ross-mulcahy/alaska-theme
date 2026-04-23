@@ -44,15 +44,19 @@ $wrapper_attrs = get_block_wrapper_attributes( array(
 			<?php
 			$route         = get_post_meta( get_the_ID(), 'destination_route', true );
 			$price         = get_post_meta( get_the_ID(), 'destination_price', true );
+			$image_url     = get_the_post_thumbnail_url( get_the_ID(), 'large' );
+			$image_url     = $image_url ? $image_url : get_post_meta( get_the_ID(), 'alaska_demo_image_url', true );
 			$terms         = get_the_terms( get_the_ID(), 'destination_category' );
 			$category_name = ( $terms && ! is_wp_error( $terms ) ) ? $terms[0]->name : '';
 			?>
 			<a href="<?php the_permalink(); ?>" class="alaska-destination-cards__card">
-				<?php if ( has_post_thumbnail() ) : ?>
-					<?php the_post_thumbnail( 'large', array(
-						'class'   => 'alaska-destination-cards__image',
-						'loading' => 'lazy',
-					) ); ?>
+				<?php if ( $image_url ) : ?>
+					<img
+						src="<?php echo esc_url( $image_url ); ?>"
+						alt="<?php echo esc_attr( get_the_title() ); ?>"
+						class="alaska-destination-cards__image"
+						loading="lazy"
+					/>
 				<?php else : ?>
 					<div class="alaska-destination-cards__placeholder"></div>
 				<?php endif; ?>

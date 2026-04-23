@@ -8,6 +8,7 @@
  */
 
 $flights_url = home_url( '/flights/' );
+$upgrade_image = 'https://images.unsplash.com/photo-1529074963764-98f45c47344b?auto=format&fit=crop&w=1400&q=80';
 ?>
 <!-- wp:group {"align":"full","backgroundColor":"surface-container-low","style":{"spacing":{"padding":{"top":"var:preset|spacing|120","bottom":"var:preset|spacing|120"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-surface-container-low-background-color has-background" style="padding-top:var(--wp--preset--spacing--120);padding-bottom:var(--wp--preset--spacing--120)"><!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|80"}}}} -->
@@ -28,8 +29,8 @@ $flights_url = home_url( '/flights/' );
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:image {"sizeSlug":"large","style":{"border":{"radius":"0.75rem"}},"linkDestination":"none"} -->
-<figure class="wp-block-image size-large has-custom-border"><img alt="Premium cabin interior" style="border-radius:0.75rem"/></figure>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"0.75rem"}}} -->
+<figure class="wp-block-image size-large has-custom-border"><img src="<?php echo esc_url( $upgrade_image ); ?>" alt="Premium cabin interior" style="border-radius:0.75rem"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>

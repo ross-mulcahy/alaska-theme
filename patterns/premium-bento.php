@@ -20,8 +20,8 @@
 <!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30","top":"var:preset|spacing|30"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"width":"50%"} -->
 <div class="wp-block-column" style="flex-basis:50%"><!-- wp:group {"backgroundColor":"surface-container-low","style":{"border":{"radius":"1rem"},"spacing":{"padding":{"top":"0","bottom":"var:preset|spacing|40","left":"0","right":"0"}},"dimensions":{"minHeight":"100%"}},"layout":{"type":"default"}} -->
-<div class="wp-block-group has-surface-container-low-background-color has-background" style="border-radius:1rem;min-height:100%;padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"><!-- wp:image {"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img alt="Relaxation"/></figure>
+<div class="wp-block-group has-surface-container-low-background-color has-background" style="border-radius:1rem;min-height:100%;padding-top:0;padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
+<figure class="wp-block-image size-large"><img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1400&q=80" alt="Premium seating detail"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"left":"var:preset|spacing|40","right":"var:preset|spacing|40","top":"var:preset|spacing|30"}}},"layout":{"type":"default"}} -->

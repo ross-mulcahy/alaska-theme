@@ -8,9 +8,10 @@
  */
 
 $flights_url = home_url( '/flights/' );
+$hero_image  = 'https://images.unsplash.com/photo-1436491865332-7a61a109db05?auto=format&fit=crop&w=1800&q=80';
 ?>
-<!-- wp:cover {"overlayColor":"primary","isUserOverlayColor":true,"dimRatio":20,"minHeight":640,"minHeightUnit":"px","isDark":true,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|120","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
-<div class="wp-block-cover alignfull is-dark" style="padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--120);padding-left:var(--wp--preset--spacing--30);min-height:640px"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim-20 has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"type":"constrained"}} -->
+<!-- wp:cover {"url":"<?php echo esc_url( $hero_image ); ?>","dimRatio":45,"overlayColor":"primary","isUserOverlayColor":true,"minHeight":640,"minHeightUnit":"px","isDark":true,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|120","left":"var:preset|spacing|30","right":"var:preset|spacing|30"}}}} -->
+<div class="wp-block-cover alignfull is-dark" style="padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--120);padding-left:var(--wp--preset--spacing--30);min-height:640px"><span aria-hidden="true" class="wp-block-cover__background has-primary-background-color has-background-dim-45 has-background-dim"></span><img class="wp-block-cover__image-background" alt="" src="<?php echo esc_url( $hero_image ); ?>" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30","margin":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"default"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--60)"><!-- wp:heading {"level":1,"style":{"typography":{"lineHeight":"1.1","letterSpacing":"-0.025em"}},"textColor":"on-primary","fontSize":"display-lg"} -->
 <h1 class="wp-block-heading has-on-primary-color has-text-color has-display-lg-font-size" style="line-height:1.1;letter-spacing:-0.025em">Fly to your next adventure</h1>

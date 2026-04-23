@@ -52,10 +52,11 @@ $wrapper_attrs = get_block_wrapper_attributes( array(
 	<div class="alaska-news-feed__list">
 		<?php if ( $news_query->have_posts() ) : ?>
 			<?php while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
+				<?php $image_url = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'medium' ) : get_post_meta( get_the_ID(), 'alaska_demo_image_url', true ); ?>
 				<article class="alaska-news-feed__item alaska-hover-zoom">
 					<div class="alaska-news-feed__thumb">
-						<?php if ( has_post_thumbnail() ) : ?>
-							<?php the_post_thumbnail( 'medium', array( 'loading' => 'lazy' ) ); ?>
+						<?php if ( $image_url ) : ?>
+							<img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" loading="lazy" />
 						<?php else : ?>
 							<div class="alaska-news-feed__placeholder"></div>
 						<?php endif; ?>

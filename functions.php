@@ -243,6 +243,34 @@ function alaska_register_destination_cpt() {
 add_action( 'init', 'alaska_register_destination_cpt' );
 
 /**
+ * Register demo media fallback meta.
+ */
+function alaska_register_demo_media_meta() {
+	register_post_meta(
+		'post',
+		'alaska_demo_image_url',
+		array(
+			'type'         => 'string',
+			'single'       => true,
+			'default'      => '',
+			'show_in_rest' => true,
+		)
+	);
+
+	register_post_meta(
+		'destination',
+		'alaska_demo_image_url',
+		array(
+			'type'         => 'string',
+			'single'       => true,
+			'default'      => '',
+			'show_in_rest' => true,
+		)
+	);
+}
+add_action( 'init', 'alaska_register_demo_media_meta' );
+
+/**
  * Register custom blocks.
  */
 function alaska_register_blocks() {

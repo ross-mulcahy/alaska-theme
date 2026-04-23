@@ -23,6 +23,7 @@ if ( ! $featured_post ) {
 }
 
 $image_url  = get_the_post_thumbnail_url( $featured_post->ID, 'large' );
+$image_url  = $image_url ? $image_url : get_post_meta( $featured_post->ID, 'alaska_demo_image_url', true );
 $categories = get_the_category( $featured_post->ID );
 $cat_name   = ! empty( $categories ) ? $categories[0]->name : 'Latest News';
 $date       = get_the_date( '', $featured_post );
