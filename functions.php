@@ -75,6 +75,9 @@ function alaska_register_pattern_categories() {
 	register_block_pattern_category( 'alaska-newsroom', array( 'label' => __( 'Alaska Newsroom', 'alaska' ) ) );
 	register_block_pattern_category( 'alaska-article', array( 'label' => __( 'Alaska Article', 'alaska' ) ) );
 	register_block_pattern_category( 'alaska-flight', array( 'label' => __( 'Alaska Flight Results', 'alaska' ) ) );
+	register_block_pattern_category( 'alaska-starters', array( 'label' => __( 'Alaska Starter Pages', 'alaska' ) ) );
+	register_block_pattern_category( 'alaska-support', array( 'label' => __( 'Alaska Support & Utility', 'alaska' ) ) );
+	register_block_pattern_category( 'alaska-destination', array( 'label' => __( 'Alaska Destinations', 'alaska' ) ) );
 }
 add_action( 'init', 'alaska_register_pattern_categories' );
 

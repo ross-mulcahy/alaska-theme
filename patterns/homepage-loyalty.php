@@ -4,7 +4,11 @@
  * Slug: alaska/homepage-loyalty
  * Categories: alaska-homepage
  * Description: Mileage Plan loyalty rewards section.
+ * Keywords: loyalty, mileage plan, benefits, rewards
  */
+
+$premium_url = home_url( '/premium/' );
+$flights_url = home_url( '/flights/' );
 ?>
 <!-- wp:group {"align":"full","backgroundColor":"surface-container-low","style":{"spacing":{"padding":{"top":"var:preset|spacing|100","bottom":"var:preset|spacing|100"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-surface-container-low-background-color has-background" style="padding-top:var(--wp--preset--spacing--100);padding-bottom:var(--wp--preset--spacing--100)"><!-- wp:group {"backgroundColor":"surface-container-lowest","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60","left":"var:preset|spacing|60","right":"var:preset|spacing|60"}},"border":{"radius":"1rem"}},"layout":{"type":"default"}} -->
@@ -24,11 +28,11 @@
 
 <!-- wp:buttons {"layout":{"type":"flex","flexWrap":"wrap"}} -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-cta-gradient"} -->
-<div class="wp-block-button is-style-cta-gradient"><a class="wp-block-button__link wp-element-button" href="#">Join for Free</a></div>
+<div class="wp-block-button is-style-cta-gradient"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( $premium_url ); ?>">Explore Benefits</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"is-style-tonal"} -->
-<div class="wp-block-button is-style-tonal"><a class="wp-block-button__link wp-element-button" href="#">Learn More</a></div>
+<div class="wp-block-button is-style-tonal"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( $flights_url ); ?>">Plan a Trip</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:column -->
