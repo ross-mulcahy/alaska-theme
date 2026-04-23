@@ -9,7 +9,7 @@
  * @package Alaska
  */
 
-$action_url   = esc_url( $attributes['actionUrl'] ?? home_url( '/flights/' ) );
+$action_url   = esc_url( $attributes['actionUrl'] ?? '#' );
 $default_from = esc_attr( $attributes['defaultFrom'] ?? 'Seattle (SEA)' );
 $default_to   = esc_attr( $attributes['defaultTo'] ?? 'San Francisco (SFO)' );
 

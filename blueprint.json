@@ -23,8 +23,37 @@
 			"options": {
 				"blogname": "Alaska Airlines",
 				"blogdescription": "The Elevated Voyager",
+				"show_on_front": "page",
 				"permalink_structure": "/%postname%/"
 			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; $page_id = wp_insert_post(array('post_title' => 'Home', 'post_status' => 'publish', 'post_type' => 'page')); update_option('page_on_front', $page_id); update_option('show_on_front', 'page'); ?>"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; wp_insert_post(array('post_title' => 'Flights', 'post_name' => 'flights', 'post_status' => 'publish', 'post_type' => 'page', 'page_template' => 'page-flights')); ?>"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; wp_insert_post(array('post_title' => 'Premium Class', 'post_name' => 'premium', 'post_status' => 'publish', 'post_type' => 'page', 'page_template' => 'page-premium')); ?>"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; $news_id = wp_insert_post(array('post_title' => 'News', 'post_name' => 'news', 'post_status' => 'publish', 'post_type' => 'page')); update_option('page_for_posts', $news_id); ?>"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; flush_rewrite_rules(); ?>"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; require_once ABSPATH . 'wp-admin/includes/media.php'; require_once ABSPATH . 'wp-admin/includes/file.php'; require_once ABSPATH . 'wp-admin/includes/image.php'; function alaska_sideload($url, $post_id, $desc) { $id = media_sideload_image($url, $post_id, $desc, 'id'); if (!is_wp_error($id)) set_post_thumbnail($post_id, $id); return $id; } $cat1 = wp_insert_term('City Break', 'destination_category'); $cat2 = wp_insert_term('European Getaway', 'destination_category'); $cat3 = wp_insert_term('Island Paradise', 'destination_category'); $d1 = wp_insert_post(array('post_title' => 'San Francisco', 'post_status' => 'publish', 'post_type' => 'destination', 'post_excerpt' => 'Explore the Golden Gate City with nonstop flights from Seattle.')); update_post_meta($d1, 'destination_route', 'Flights from Seattle'); update_post_meta($d1, 'destination_price', '$129*'); if (!is_wp_error($cat1)) wp_set_object_terms($d1, $cat1['term_id'], 'destination_category'); alaska_sideload('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&q=80', $d1, 'San Francisco'); $d2 = wp_insert_post(array('post_title' => 'Paris', 'post_status' => 'publish', 'post_type' => 'destination', 'post_excerpt' => 'Experience the City of Light with partner flights from the West Coast.')); update_post_meta($d2, 'destination_route', 'Partner flights from SEA'); update_post_meta($d2, 'destination_price', '$645*'); if (!is_wp_error($cat2)) wp_set_object_terms($d2, $cat2['term_id'], 'destination_category'); alaska_sideload('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80', $d2, 'Paris'); $d3 = wp_insert_post(array('post_title' => 'Maui', 'post_status' => 'publish', 'post_type' => 'destination', 'post_excerpt' => 'Escape to paradise with direct flights from Portland.')); update_post_meta($d3, 'destination_route', 'Flights from Portland'); update_post_meta($d3, 'destination_price', '$389*'); if (!is_wp_error($cat3)) wp_set_object_terms($d3, $cat3['term_id'], 'destination_category'); alaska_sideload('https://images.unsplash.com/photo-1542259009477-d625272157b7?w=800&q=80', $d3, 'Maui'); ?>"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; require_once ABSPATH . 'wp-admin/includes/media.php'; require_once ABSPATH . 'wp-admin/includes/file.php'; require_once ABSPATH . 'wp-admin/includes/image.php'; $p1 = wp_insert_post(array('post_title' => 'Alaska Airlines Announces New Nonstop Routes to Latin America', 'post_status' => 'publish', 'post_type' => 'post', 'post_content' => '<!-- wp:paragraph --><p>SEATTLE — Alaska Airlines is expanding its footprint in Latin America with three new nonstop routes connecting major West Coast hubs to sought-after destinations in Mexico and Central America.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Starting this winter, Alaska will launch service from Seattle-Tacoma International Airport (SEA) and Los Angeles International Airport (LAX) to new tropical gateways. These additions reinforce the airline commitment to providing guests with more premium options for leisure travel.</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":3} --><h3 class=\"wp-block-heading\">Connecting the West Coast to the World</h3><!-- /wp:heading --><!-- wp:paragraph --><p>We are thrilled to give our guests more reasons to pack their bags and explore the beauty of Latin America, said Andrew Harrison, executive vice president and chief commercial officer.</p><!-- /wp:paragraph -->', 'post_excerpt' => 'Beginning this winter, Alaska Airlines will expand its reach across the Americas with three new international destinations.')); $img1 = media_sideload_image('https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1200&q=80', $p1, 'Aircraft over mountains', 'id'); if (!is_wp_error($img1)) set_post_thumbnail($p1, $img1); $p2 = wp_insert_post(array('post_title' => 'Redefining Premium: Our New Cabin Interiors are Here', 'post_status' => 'publish', 'post_type' => 'post', 'post_content' => '<!-- wp:paragraph --><p>Discover the inspiration behind our new seats, featuring recycled materials and increased legroom across all cabins. Alaska Airlines has partnered with leading designers to create a cabin experience that feels spacious, modern, and distinctly West Coast.</p><!-- /wp:paragraph -->', 'post_excerpt' => 'Discover the inspiration behind our new seats, featuring recycled materials and increased legroom.')); $img2 = media_sideload_image('https://images.unsplash.com/photo-1540339832862-474599807836?w=1200&q=80', $p2, 'Aircraft cabin interior', 'id'); if (!is_wp_error($img2)) set_post_thumbnail($p2, $img2); $p3 = wp_insert_post(array('post_title' => 'Path to Net Zero: Annual Sustainability Report Released', 'post_status' => 'publish', 'post_type' => 'post', 'post_content' => '<!-- wp:paragraph --><p>Alaska Airlines reaches key milestones in sustainable aviation fuel procurement and waste reduction goals. The airline has committed to net-zero carbon emissions by 2040, ahead of the industry target.</p><!-- /wp:paragraph -->', 'post_excerpt' => 'Alaska Airlines reaches key milestones in sustainable aviation fuel procurement and waste reduction.')); $img3 = media_sideload_image('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=1200&q=80', $p3, 'Sustainability landscape', 'id'); if (!is_wp_error($img3)) set_post_thumbnail($p3, $img3); ?>"
 		}
 	]
 }
